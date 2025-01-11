@@ -1,0 +1,62 @@
+research_story_theme_task:
+  description: >
+    Based on the user input {story_theme} and target age group {age_range}, research appropriate topics
+    and themes for a children's picture book. Use Wikipedia and other sources to gather background information
+    and educational elements that could enrich the story. Consider developmental stages, learning objectives,
+    and engagement factors suitable for the target age group.
+  expected_output: >
+    A comprehensive research report detailing potential vocabulary, educational elements, and age-appropriate
+    content recommendations, supported by relevant background information and sources.
+
+develop_story_outline_task:
+  description: >
+    Create a detailed story outline based on the research findings and user requirements {story_theme}.
+    Plan the narrative structure for a picture book appropriate for age {age_range}, including character
+    development, plot points, and page-by-page story progression. Ensure the story length and complexity
+    align with the target age group's attention span and comprehension level.
+
+    Note: One page consists of a core vocabulary word, one simple English sentence, and its translation. (one-to-one)
+  expected_output: >
+    Title of the book, character descriptions, plot points, core vocabulary words, and educational elements.
+
+write_story_content_task:
+  description: >
+    Transform the approved story outline into engaging, age-appropriate prose for each page. Ensure
+    vocabulary and sentence structure are suitable for {age_range}, while maintaining narrative flow
+    and entertainment value. Each page's content should be balanced in length and complexity.
+
+    Note: One page consists of a core vocabulary word, one simple English sentence, and its translation. (one-to-one)
+  expected_output: >
+    Complete story text broken down by pages, with age-appropriate language, engaging narrative,
+    and consistent pacing throughout the book.
+
+design_art_direction_task:
+  description: >
+    Develop comprehensive visual style guidelines for the book's illustrations based on the
+    content and target age group {age_range}. Create detailed image generation prompts for each page
+    that maintain consistency in character design, color palette, and overall artistic direction.
+  expected_output: >
+    Character design specifications, color palette, visual style guidelines.
+
+create_illustrations_task:
+  description: >
+    Using AI image generation tools, create illustrations for each page following the art direction
+    guidelines and content. Generate multiple variations for each scene to ensure the best
+    possible visual representation. Ensure illustrations are engaging and appropriate
+    for {age_range}.
+
+    Note: One illustration for one page (one-to-one)
+  expected_output: >
+    High-quality AI illustration prompts (e.g. for Midjourney) for each page that align with the art direction, content,
+    and age-appropriate visual complexity.
+
+translate_content_task:
+  description: >
+    Translate the approved text into the target language {target_language}, maintaining the
+    story's charm, cultural nuances, and age-appropriate tone. Ensure the translation fits well
+    with the illustrations and maintains proper pacing for each page.
+
+    Each page consists of a core vocabulary word,one illustration, one simple English sentence, and its translation.
+  expected_output: >
+    Complete translated text for each page in {target_language}, preserving the original story's
+    engagement level and educational value while being culturally appropriate.
