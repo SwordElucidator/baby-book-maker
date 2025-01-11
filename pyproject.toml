@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "baby-book-maker"
+version = "0.1.0"
+description = ""
+authors = ["Hao Sun <nagisa940216@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "<3.13,>=3.10"
+crewai = {extras = ["tools"], version = "^0.95.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
