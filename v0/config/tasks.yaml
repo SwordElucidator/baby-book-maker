@@ -1,17 +1,15 @@
 research_story_theme_task:
   description: >
-    Based on the user input {story_theme} and target age group {age_range}, research appropriate topics
-    and themes for a children's picture book. Use Wikipedia and other sources to gather background information
-    and educational elements that could enrich the story. Consider developmental stages, learning objectives,
-    and engagement factors suitable for the target age group.
+    Based on the user input "{story_theme}" and target age group "{age_range}", research the latest topics
+    and themes. Use Wikipedia and other sources to gather background information
+    and educational elements. Use simple language to explain hard concepts for children.
+    Establish a final theme for a picture book, then determine the key educational elements.
   expected_output: >
-    A comprehensive research report detailing potential vocabulary, educational elements, and age-appropriate
-    content recommendations, supported by relevant background information and sources.
-
+    Final theme for a picture book, key educational elements. Must follow user's input "{story_theme}".
 develop_story_outline_task:
   description: >
-    Create a detailed story outline based on the research findings and user requirements {story_theme}.
-    Plan the narrative structure for a picture book appropriate for age {age_range}, including character
+    Create a detailed story outline based on the research findings and user requirements "{story_theme}".
+    Plan the narrative structure for a picture book appropriate for age "{age_range}", including character
     development, plot points, and page-by-page story progression. Ensure the story length and complexity
     align with the target age group's attention span and comprehension level.
 
@@ -22,7 +20,7 @@ develop_story_outline_task:
 write_story_content_task:
   description: >
     Transform the approved story outline into engaging, age-appropriate prose for each page. Ensure
-    vocabulary and sentence structure are suitable for {age_range}, while maintaining narrative flow
+    vocabulary and sentence structure are suitable for "{age_range}", while maintaining narrative flow
     and entertainment value. Each page's content should be balanced in length and complexity.
 
     Note: One page consists of a core vocabulary word, one simple English sentence, and its translation. (one-to-one)
@@ -33,7 +31,7 @@ write_story_content_task:
 design_art_direction_task:
   description: >
     Develop comprehensive visual style guidelines for the book's illustrations based on the
-    content and target age group {age_range}. Create detailed image generation prompts for each page
+    content and target age group "{age_range}". Create detailed image generation prompts for each page
     that maintain consistency in character design, color palette, and overall artistic direction.
   expected_output: >
     Character design specifications, color palette, visual style guidelines.
@@ -43,7 +41,7 @@ create_illustrations_task:
     Using AI image generation tools, create illustrations for each page following the art direction
     guidelines and content. Generate multiple variations for each scene to ensure the best
     possible visual representation. Ensure illustrations are engaging and appropriate
-    for {age_range}.
+    for "{age_range}".
 
     Note: One illustration for one page (one-to-one)
   expected_output: >
@@ -52,11 +50,11 @@ create_illustrations_task:
 
 translate_content_task:
   description: >
-    Translate the approved text into the target language {target_language}, maintaining the
+    Translate the approved text into the target language "{target_language}", maintaining the
     story's charm, cultural nuances, and age-appropriate tone. Ensure the translation fits well
     with the illustrations and maintains proper pacing for each page.
 
     Each page consists of a core vocabulary word,one illustration, one simple English sentence, and its translation.
   expected_output: >
-    Complete translated text for each page in {target_language}, preserving the original story's
+    Complete translated text for each page in "{target_language}", preserving the original story's
     engagement level and educational value while being culturally appropriate.

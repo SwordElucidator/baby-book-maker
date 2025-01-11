@@ -10,6 +10,11 @@ from pydantic import BaseModel, Field
 llm = LLM(model="bedrock/us.anthropic.claude-3-5-sonnet-20241022-v2:0", temperature=0.8)
 
 
+class ResearchResult(BaseModel):
+    """Research result model"""
+    theme: str = Field(..., description="The final theme for a picture book")
+    educational_elements: List[str] = Field(..., description="The educational elements in the picture book")
+    
 class SinglePageInOutline(BaseModel):
     """Single page model"""
     core_vocabulary: str = Field(..., description="The core vocabulary word for the page")
@@ -53,6 +58,15 @@ class StoryBookCrew():
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
 
+    @agent
+    def researcher(self) -> Agent:
+        return Agent(
+            config=self.agents_config['researcher'],
+            verbose=True,
+            memory=False,
+            llm=llm,
+        )
+    
     @agent
     def story_outline_planner(self) -> Agent:
         return Agent(
@@ -102,7 +116,8 @@ class StoryBookCrew():
     def research_story_theme_task(self) -> Task:
         return Task(
             config=self.tasks_config['research_story_theme_task'],
-            agent=self.story_outline_planner()
+            agent=self.researcher(),
+            output_json=ResearchResult
         )
 
     @task
@@ -173,8 +188,8 @@ if __name__ == "__main__":
     crew = StoryBookCrew().crew()
     
     result = crew.kickoff({
-        'story_theme': 'The universe and its mysteries. Should be knowledge based and contain a lot of scientific facts.',
-        'age_range': '1-4',
+        'story_theme': 'The modern cosmology about the universe, its birth, evolution and different types of Celestial bodies',
+        'age_range': '1-6',
         'target_language': 'Chinese'
     })
 
