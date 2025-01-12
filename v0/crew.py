@@ -232,7 +232,6 @@ class StoryBookCrew():
 if __name__ == "__main__":
     # load environment variables
     load_dotenv()
-    litellm.set_verbose=True
 
     crew = StoryBookCrew().crew()
     

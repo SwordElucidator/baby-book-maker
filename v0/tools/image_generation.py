@@ -54,25 +54,19 @@ class ImageGenerationTool(BaseTool):
         Returns:
             str: Path to the generated image file
         """
-        try:
-            # Generate image
-            result = fal_client.subscribe(
-                "fal-ai/flux/schnell",
-                arguments={
-                    "prompt": prompt,
-                    "image_size": {
-                        "width": width,
-                        "height": height
-                    }
-                },
-                with_logs=True,
-                on_queue_update=on_queue_update,
-            )
-
-            return result['url']
-            
-        except Exception as e:
-            return f"Error generating image: {str(e)}"
+        result = fal_client.subscribe(
+            "fal-ai/flux/schnell",
+            arguments={
+                "prompt": prompt,
+                "image_size": {
+                    "width": width,
+                    "height": height
+                }
+            },
+            with_logs=True,
+            on_queue_update=on_queue_update,
+        )
+        return result['images'][0]['url']
 
 
 
