@@ -1,3 +1,4 @@
+import datetime
 import json
 import os
 from typing import List
@@ -5,6 +6,8 @@ from crewai import LLM, Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
+
+from v0.tools.image_generation import ImageGenerationTool
 
 
 llm = LLM(model="bedrock/us.anthropic.claude-3-5-sonnet-20241022-v2:0", temperature=0.8)
@@ -15,6 +18,7 @@ class ResearchResult(BaseModel):
     theme: str = Field(..., description="The final theme for a picture book")
     educational_elements: List[str] = Field(..., description="The educational elements in the picture book")
     
+
 class SinglePageInOutline(BaseModel):
     """Single page model"""
     core_vocabulary: str = Field(..., description="The core vocabulary word for the page")
@@ -40,9 +44,15 @@ class ArtDirection(BaseModel):
     art_direction: str = Field(..., description="The final art direction")
 
 
-class Illustrations(BaseModel):
+class IllustrationPrompts(BaseModel):
     """Illustrations model"""
-    illustrations: List[str] = Field(..., description="The final illustrations")
+    illustration_prompts: List[str] = Field(..., description="The AI image generation prompts for each page")
+
+
+class Illustrations(BaseModel):
+    """Illustration paths model"""
+    image_size: str = Field(..., description="The consistent size of the illustration")
+    illustration_paths: List[str] = Field(..., description="The paths to the generated illustrations for each page")
 
 
 
@@ -50,6 +60,12 @@ class TranslatedContents(BaseModel):
     """Translated content model"""
     translated_page_vocabularies: List[str] = Field(..., description="The translated core vocabulary word for each page")
     translated_contents: List[str] = Field(..., description="The final translated contents for each page")
+
+
+
+class HtmlPages(BaseModel):
+    """HTML pages model"""
+    html_pages: List[str] = Field(..., description="The generated HTML pages with integrated content")
 
 
 @CrewBase
@@ -101,12 +117,22 @@ class StoryBookCrew():
             verbose=True,
             memory=False,
             llm=llm,
+            tools=[ImageGenerationTool()]
         )
 
     @agent
     def translator(self) -> Agent:
         return Agent(
             config=self.agents_config['translator'],
+            verbose=True,
+            memory=False,
+            llm=llm,
+        )
+    
+    @agent
+    def page_designer(self) -> Agent:
+        return Agent(
+            config=self.agents_config['page_designer'],
             verbose=True,
             memory=False,
             llm=llm,
@@ -157,7 +183,18 @@ class StoryBookCrew():
                 self.write_story_content_task(),
                 self.design_art_direction_task()
             ],
-            output_json=Illustrations
+            tools=[],
+            output_json=IllustrationPrompts,
+        )
+    
+    @task
+    def generate_illustrations_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['generate_illustrations_task'],
+            agent=self.illustrator(),
+            context=[self.create_illustrations_task()],
+            output_json=Illustrations,
+            tools=[ImageGenerationTool()]
         )
 
     @task
@@ -167,6 +204,19 @@ class StoryBookCrew():
             agent=self.translator(),
             context=[self.write_story_content_task()],
             output_json=TranslatedContents
+        )
+    
+    @task
+    def generate_html_pages_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['generate_html_pages_task'],
+            agent=self.page_designer(),
+            context=[
+                self.write_story_content_task(),
+                self.translate_content_task(),
+                self.generate_illustrations_task()
+            ],
+            output_json=HtmlPages
         )
 
     @crew
@@ -196,3 +246,17 @@ if __name__ == "__main__":
     # output the result to a file
     with open('result.json', 'w') as f:
         json.dump(result.model_dump(), open('result.json', 'w', encoding='utf-8'), indent=4, ensure_ascii=False)
+
+    import pdb
+    pdb.set_trace()
+    html_pages = result.json_dict['html_pages']
+    # Create output directory if it doesn't exist
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_dir = f'output_htmls_{timestamp}'
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Save each HTML page to a file
+    for i, html_page in enumerate(html_pages):
+        output_path = f'{output_dir}/page_{i+1}.html'
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(html_page)
