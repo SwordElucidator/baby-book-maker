@@ -4,6 +4,12 @@ from pydantic import BaseModel, Field
 from crewai.tools import BaseTool
 from huggingface_hub import InferenceClient
 from dotenv import load_dotenv
+import fal_client
+
+def on_queue_update(update):
+    if isinstance(update, fal_client.InProgress):
+        for log in update.logs:
+           print(log["message"])
 
 
 class ImageGenerationSchema(BaseModel):
@@ -50,14 +56,38 @@ class ImageGenerationTool(BaseTool):
         """
         try:
             # Generate image
-            image = client.text_to_image(prompt, width=width, height=height)
-            
-            # Save image to file
-            output_path = f"generated_images/{prompt[:30]}.jpg"
-            os.makedirs("generated_images", exist_ok=True)
-            image.save(output_path)
-            
-            return output_path
+            result = fal_client.subscribe(
+                "fal-ai/flux/schnell",
+                arguments={
+                    "prompt": prompt,
+                    "image_size": {
+                        "width": width,
+                        "height": height
+                    }
+                },
+                with_logs=True,
+                on_queue_update=on_queue_update,
+            )
+
+            return result['url']
             
         except Exception as e:
             return f"Error generating image: {str(e)}"
+
+
+
+
+if __name__ == "__main__":
+    # Test image generation
+    tool = ImageGenerationTool()
+    
+    test_prompt = "A cute cartoon astronaut floating in space with stars and planets in the background, children's book style"
+    
+    print(f"Generating test image with prompt: {test_prompt}")
+    result = tool._run(
+        prompt=test_prompt,
+        width=1280,
+        height=720
+    )
+    
+    print(f"Image generated at: {result}")

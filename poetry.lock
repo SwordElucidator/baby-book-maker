@@ -1116,6 +1116,26 @@ files = [
 tests = ["asttokens (>=2.1.0)", "coverage", "coverage-enable-subprocess", "ipython", "littleutils", "pytest", "rich"]
 
 [[package]]
+name = "fal-client"
+version = "0.5.6"
+description = "Python client for fal.ai"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "fal_client-0.5.6-py3-none-any.whl", hash = "sha256:631fd857a3c44753ee46a2eea1e7276471453aca58faac9c3702f744c7c84050"},
+    {file = "fal_client-0.5.6.tar.gz", hash = "sha256:d3afc4b6250023d0ee8437ec504558231d3b106d7aabc12cda8c39883faddecb"},
+]
+
+[package.dependencies]
+httpx = ">=0.21.0,<1"
+httpx-sse = ">=0.4.0,<0.5"
+
+[package.extras]
+dev = ["fal-client[docs,test]"]
+docs = ["sphinx", "sphinx-autodoc-typehints", "sphinx-rtd-theme"]
+test = ["pillow", "pytest", "pytest-asyncio"]
+
+[[package]]
 name = "fastapi"
 version = "0.115.6"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
@@ -6587,4 +6607,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "<3.13,>=3.10"
-content-hash = "e369fb5e4a2146ab80ac6d5cb2212eda355885b334d866950f86e1e3fec04fc0"
+content-hash = "1d482090727e9468f9539739d87d707fc2643d69cba9e389d6785a9d3bef6e3a"

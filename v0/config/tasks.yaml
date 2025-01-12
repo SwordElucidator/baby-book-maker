@@ -25,7 +25,7 @@ write_story_content_task:
 
     Note: One page consists of a core vocabulary word, one simple English sentence, and its translation. (one-to-one)
   expected_output: >
-    Complete story text broken down by pages, with age-appropriate language, engaging narrative,
+    A list of story text and core vocabulary word broken down by pages, with age-appropriate language, engaging narrative,
     and consistent pacing throughout the book.
 
 # TODO 未来增加review
@@ -85,12 +85,12 @@ translate_content_task:
 
     Each page consists of a core vocabulary word,one illustration, one simple English sentence, and its translation.
   expected_output: >
-    Complete translated text for each page in "{target_language}", preserving the original story's
+    A list of complete translated text & core vocabulary word for each page in "{target_language}", preserving the original story's
     engagement level and educational value while being culturally appropriate.
 
 generate_html_pages_task:
   description: >
-    Generate HTML pages that combine text content, translations, and illustrations into a cohesive layout
+    Generate a single-page HTML template that combine text content, translations, and illustrations into a cohesive layout
     suitable for A4 paper printing. For each page:
 
     1. Layout Requirements:
@@ -102,7 +102,7 @@ generate_html_pages_task:
        - English text content with core vocabulary word highlighted
        - Translated text content with core vocabulary word highlighted
 
-    Ensure consistent styling across all pages while maintaining readability and visual appeal
-    appropriate for age range "{age_range}".
+    Ensure maintaining readability and visual appeal appropriate for age range "{age_range}".
   expected_output: >
-    A list of print-ready HTML pages with integrated content
+    An html template (with javascript if needed) that can fulfill with the following key: {illustration_path}  {english_text}   {translated_text}   {english_highlight_vocabulary_word}  {translated_highlight_vocabulary_word}
+    Directly output the html. No explanation.

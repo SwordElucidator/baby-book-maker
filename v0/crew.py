@@ -5,6 +5,7 @@ from typing import List
 from crewai import LLM, Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from dotenv import load_dotenv
+import litellm
 from pydantic import BaseModel, Field
 
 from v0.tools.image_generation import ImageGenerationTool
@@ -33,10 +34,14 @@ class StoryOutline(BaseModel):
     pages: List[SinglePageInOutline] = Field(..., description="The pages in the book")
 
 
+class PageContent(BaseModel):
+    core_vocabulary_word: str = Field(..., description="The core vocabulary word for the page")
+    content: str = Field(..., description="The content for the page")
+
+
 class PageContents(BaseModel):
-    """Page content model"""
-    page_vocabularies: List[str] = Field(..., description="The core vocabulary word for each page")
-    page_contents: List[str] = Field(..., description="The final page contents for each page")
+    """Collection of page content"""
+    pages: List[PageContent] = Field(..., description="The content for each page")
     
 
 class ArtDirection(BaseModel):
@@ -58,14 +63,8 @@ class Illustrations(BaseModel):
 
 class TranslatedContents(BaseModel):
     """Translated content model"""
-    translated_page_vocabularies: List[str] = Field(..., description="The translated core vocabulary word for each page")
-    translated_contents: List[str] = Field(..., description="The final translated contents for each page")
+    pages: List[PageContent] = Field(..., description="The translated content for each page")
 
-
-
-class HtmlPages(BaseModel):
-    """HTML pages model"""
-    html_pages: List[str] = Field(..., description="The generated HTML pages with integrated content")
 
 
 @CrewBase
@@ -216,7 +215,6 @@ class StoryBookCrew():
                 self.translate_content_task(),
                 self.generate_illustrations_task()
             ],
-            output_json=HtmlPages
         )
 
     @crew
@@ -234,6 +232,7 @@ class StoryBookCrew():
 if __name__ == "__main__":
     # load environment variables
     load_dotenv()
+    litellm.set_verbose=True
 
     crew = StoryBookCrew().crew()
     
@@ -249,14 +248,37 @@ if __name__ == "__main__":
 
     import pdb
     pdb.set_trace()
-    html_pages = result.json_dict['html_pages']
+    
     # Create output directory if it doesn't exist
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     output_dir = f'output_htmls_{timestamp}'
     os.makedirs(output_dir, exist_ok=True)
     
-    # Save each HTML page to a file
-    for i, html_page in enumerate(html_pages):
-        output_path = f'{output_dir}/page_{i+1}.html'
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(html_page)
+    # Get the template and data from results
+    html_template: str = result.raw
+    illustrations: list[str] = result.tasks_output[-3].illustration_paths
+    english_pages: list[PageContent] = result.tasks_output[-6].pages
+    translated_pages: list[PageContent] = result.tasks_output[-2].pages
+
+    # Save the template
+    template_file = os.path.join(output_dir, 'template.html')
+    with open(template_file, 'w', encoding='utf-8') as f:
+        f.write(html_template)
+
+    # For each page, create an HTML file with the content
+    for i in range(len(illustrations)):
+        page_data = {
+            'illustration_path': illustrations[i],
+            'english_text': english_pages[i].content,
+            'translated_text': translated_pages[i].content,
+            'english_highlight_vocabulary_word': english_pages[i].core_vocabulary_word,
+            'translated_highlight_vocabulary_word': translated_pages[i].core_vocabulary_word
+        }
+        
+        # Render the template with the page data
+        page_html = html_template.format(**page_data)
+        
+        # Save to a file
+        output_file = os.path.join(output_dir, f'page_{i+1}.html')
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(page_html)

@@ -1,67 +1,38 @@
 {
-    "raw": "{\n  \"translated_page_vocabularies\": [\n    \"宇宙\",\n    \"星星\",\n    \"光芒\",\n    \"行星\",\n    \"地球\",\n    \"月亮\",\n    \"白天\",\n    \"夜晚\",\n    \"望远镜\",\n    \"火箭\",\n    \"数数\",\n    \"家园\"\n  ],\n  \"translated_contents\": [\n    \"宇宙像一颗小种子一样开始，长成了令人惊叹的样子！\",\n    \"一颗名叫闪闪的小星星在满是星光的太空家庭中醒来。\",\n    \"闪闪的光芒忽明忽暗，像在玩一场魔法游戏。\",\n    \"每颗行星都像太空中的旋转木马一样转个不停。\",\n    \"地球穿着漂亮的蓝色和绿色裙子，那是海洋和陆地。\",\n    \"月亮每天晚上都绕着地球玩圈圈游戏。\",\n    \"当太阳用温暖的拥抱迎接地球时，白天就来了。\",\n    \"夜晚时分，闪闪和朋友们一起让天空变得美丽。\",\n    \"孩子们用望远镜向上看，看着闪闪发光。\",\n    \"大火箭飞向高空，向太空的朋友们问好。\",\n    \"和闪闪一起数行星：一、二、三、四、五！\",\n    \"地球是每个人的家园，是太空中一颗特别的蓝色弹珠。\"\n  ]\n}",
+    "raw": "{\n  \"html_pages\": [\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page1_baby_star.png' alt='Baby Star'><div class='text-content'><p>High in the sky, a tiny <span class='highlight'>star</span> named Stella twinkles and shines so bright.</p><p>在高高的天空中，一颗名叫斯特拉的小<span class='highlight'>星星</span>闪烁着明亮的光芒。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page2_friendly_sun.png' alt='Friendly Sun'><div class='text-content'><p>Warm and glowing Papa <span class='highlight'>sun</span> smiles and says 'Welcome to our solar system!'</p><p>温暖发光的<span class='highlight'>太阳</span>爸爸微笑着说：\"欢迎来到我们的太阳系！\"</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page3_planet_orbit.png' alt='Planet Orbit'><div class='text-content'><p>Stella counts eight colorful <span class='highlight'>planets</span> dancing around Papa Sun.</p><p>斯特拉数着八颗围绕太阳爸爸跳舞的彩色<span class='highlight'>行星</span>。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page4_earth_character.png' alt='Earth Character'><div class='text-content'><p><span class='highlight'>Earth</span> is a beautiful blue planet where people and animals make their home.</p><p><span class='highlight'>地球</span>是一颗美丽的蓝色星球，人类和动物们在这里安居乐业。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page5_moon_phases.png' alt='Moon Phases'><div class='text-content'><p>Luna the <span class='highlight'>Moon</span> shows Stella how she changes from round to crescent each night.</p><p><span class='highlight'>月亮</span>露娜向斯特拉展示她每晚是如何从圆月变成新月的。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page6_asteroid_lesson.png' alt='Asteroid Lesson'><div class='text-content'><p>Rocky the Asteroid teaches Stella how to float and spin through <span class='highlight'>space</span>.</p><p>小行星洛奇教斯特拉如何在<span class='highlight'>太空</span>中漂浮和旋转。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page7_earth_spinning.png' alt='Earth Spinning'><div class='text-content'><p>Stella watches Earth turn around to make <span class='highlight'>day</span> become night.</p><p>斯特拉看着地球转动，<span class='highlight'>白天</span>变成黑夜。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page8_constellation.png' alt='Constellation'><div class='text-content'><p>Stella plays a fun game connecting stars to make <span class='highlight'>constellation</span> pictures.</p><p>斯特拉玩着一个有趣的游戏，把星星连接起来组成<span class='highlight'>星座</span>图案。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page9_rocket_wonder.png' alt='Rocket Wonder'><div class='text-content'><p>A friendly silver <span class='highlight'>rocket</span> zooms past Stella on its space adventure.</p><p>一艘友好的银色<span class='highlight'>火箭</span>在太空冒险时从斯特拉身边呼啸而过。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page10_celebration.png' alt='Celebration'><div class='text-content'><p>Stella smiles, knowing our <span class='highlight'>universe</span> is filled with wonderful things to discover.</p><p>斯特拉微笑着，知道我们的<span class='highlight'>宇宙</span>充满了等待发现的奇妙事物。</p></div></div></body></html>\"\n  ]\n}",
     "pydantic": null,
-    "json_dict": {
-        "translated_page_vocabularies": [
-            "宇宙",
-            "星星",
-            "光芒",
-            "行星",
-            "地球",
-            "月亮",
-            "白天",
-            "夜晚",
-            "望远镜",
-            "火箭",
-            "数数",
-            "家园"
-        ],
-        "translated_contents": [
-            "宇宙像一颗小种子一样开始，长成了令人惊叹的样子！",
-            "一颗名叫闪闪的小星星在满是星光的太空家庭中醒来。",
-            "闪闪的光芒忽明忽暗，像在玩一场魔法游戏。",
-            "每颗行星都像太空中的旋转木马一样转个不停。",
-            "地球穿着漂亮的蓝色和绿色裙子，那是海洋和陆地。",
-            "月亮每天晚上都绕着地球玩圈圈游戏。",
-            "当太阳用温暖的拥抱迎接地球时，白天就来了。",
-            "夜晚时分，闪闪和朋友们一起让天空变得美丽。",
-            "孩子们用望远镜向上看，看着闪闪发光。",
-            "大火箭飞向高空，向太空的朋友们问好。",
-            "和闪闪一起数行星：一、二、三、四、五！",
-            "地球是每个人的家园，是太空中一颗特别的蓝色弹珠。"
-        ]
-    },
+    "json_dict": null,
     "tasks_output": [
         {
             "description": "Based on the user input \"The modern cosmology about the universe, its birth, evolution and different types of Celestial bodies\" and target age group \"1-6\", research the latest topics and themes. Use Wikipedia and other sources to gather background information and educational elements. Use simple language to explain hard concepts for children. Establish a final theme for a picture book, then determine the key educational elements.\n",
             "name": "research_story_theme_task",
             "expected_output": "Final theme for a picture book, key educational elements. Must follow user's input \"The modern cosmology about the universe, its birth, evolution and different types of Celestial bodies\".\n",
             "summary": "Based on the user input \"The modern cosmology about the...",
-            "raw": "{\n  \"theme\": \"The Cosmic Journey: A Baby Star's Adventure Through Our Amazing Universe\",\n  \"educational_elements\": [\n    \"Basic concept of the Big Bang using simple metaphors (like a tiny seed growing into a giant tree)\",\n    \"Introduction to day and night cycle through Earth's rotation\",\n    \"Simple identification of main celestial bodies (Sun, Moon, stars, planets)\",\n    \"Basic shapes in space (round planets, spiral galaxies)\",\n    \"Simple colors of celestial objects (yellow Sun, blue Earth, red Mars)\",\n    \"Count stars and planets (basic numbers 1-5)\",\n    \"Size comparison using familiar objects (Sun is bigger than Earth like a parent is bigger than a child)\",\n    \"Basic movements in space (spinning planets, orbiting moon)\",\n    \"Different types of stars (bright/dim, big/small)\",\n    \"Simple weather phenomena related to space (sunny day, starry night)\",\n    \"Basic concept of gravity through relatable examples (things falling down)\",\n    \"Introduction to astronauts and space exploration\",\n    \"Simple vocabulary words (star, planet, moon, space, sky)\",\n    \"Day vs night sky observations\",\n    \"Basic patterns in the sky (star constellations as simple shapes)\",\n    \"Concept of light and darkness in space\",\n    \"Simple space sounds (rocket launch, silence in space)\",\n    \"Introduction to telescopes as tools to see far away\",\n    \"Basic concept of time through cosmic events (day/night cycle)\",\n    \"Environmental awareness (Earth as our home in space)\"\n  ]\n}",
+            "raw": "{\n  \"theme\": \"Stella's Cosmic Journey: A Little Star's Adventure Through Our Amazing Universe\",\n  \"educational_elements\": [\n    \"Introduction to the Sun as our special star that gives light and warmth\",\n    \"Basic shapes and colors of celestial bodies (round planets, twinkling stars, colorful nebulas)\",\n    \"Day and night cycle explained through Earth's rotation\",\n    \"Different types of visible celestial objects (Moon, planets, stars)\",\n    \"Simple counting opportunities with planets and stars\",\n    \"Basic size comparisons (Sun is bigger than Earth, Earth is bigger than Moon)\",\n    \"Observable sky phenomena (shooting stars, Moon phases)\",\n    \"Simple weather patterns related to the Sun (sunny day, cloudy day)\",\n    \"Basic directional concepts (up in the sky, down on Earth)\",\n    \"Introduction to space exploration through friendly spacecraft characters\",\n    \"Simple facts about each planet in our solar system\",\n    \"Basic concepts about gravity (things float in space)\",\n    \"Light and dark in space (stars shine in the dark)\",\n    \"Introduction to constellations as connect-the-dot pictures in the sky\",\n    \"Simple vocabulary building (planet, star, moon, space, universe)\",\n    \"Basic emotions through cosmic characters (happy Sun, sleepy Moon)\",\n    \"Color recognition through different planets and stars\",\n    \"Simple patterns in space (repeating star patterns, planet rings)\",\n    \"Basic concepts of distance (some stars are far away, Moon is closer)\",\n    \"Introduction to the concept of time through day/night cycle\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "theme": "The Cosmic Journey: A Baby Star's Adventure Through Our Amazing Universe",
+                "theme": "Stella's Cosmic Journey: A Little Star's Adventure Through Our Amazing Universe",
                 "educational_elements": [
-                    "Basic concept of the Big Bang using simple metaphors (like a tiny seed growing into a giant tree)",
-                    "Introduction to day and night cycle through Earth's rotation",
-                    "Simple identification of main celestial bodies (Sun, Moon, stars, planets)",
-                    "Basic shapes in space (round planets, spiral galaxies)",
-                    "Simple colors of celestial objects (yellow Sun, blue Earth, red Mars)",
-                    "Count stars and planets (basic numbers 1-5)",
-                    "Size comparison using familiar objects (Sun is bigger than Earth like a parent is bigger than a child)",
-                    "Basic movements in space (spinning planets, orbiting moon)",
-                    "Different types of stars (bright/dim, big/small)",
-                    "Simple weather phenomena related to space (sunny day, starry night)",
-                    "Basic concept of gravity through relatable examples (things falling down)",
-                    "Introduction to astronauts and space exploration",
-                    "Simple vocabulary words (star, planet, moon, space, sky)",
-                    "Day vs night sky observations",
-                    "Basic patterns in the sky (star constellations as simple shapes)",
-                    "Concept of light and darkness in space",
-                    "Simple space sounds (rocket launch, silence in space)",
-                    "Introduction to telescopes as tools to see far away",
-                    "Basic concept of time through cosmic events (day/night cycle)",
-                    "Environmental awareness (Earth as our home in space)"
+                    "Introduction to the Sun as our special star that gives light and warmth",
+                    "Basic shapes and colors of celestial bodies (round planets, twinkling stars, colorful nebulas)",
+                    "Day and night cycle explained through Earth's rotation",
+                    "Different types of visible celestial objects (Moon, planets, stars)",
+                    "Simple counting opportunities with planets and stars",
+                    "Basic size comparisons (Sun is bigger than Earth, Earth is bigger than Moon)",
+                    "Observable sky phenomena (shooting stars, Moon phases)",
+                    "Simple weather patterns related to the Sun (sunny day, cloudy day)",
+                    "Basic directional concepts (up in the sky, down on Earth)",
+                    "Introduction to space exploration through friendly spacecraft characters",
+                    "Simple facts about each planet in our solar system",
+                    "Basic concepts about gravity (things float in space)",
+                    "Light and dark in space (stars shine in the dark)",
+                    "Introduction to constellations as connect-the-dot pictures in the sky",
+                    "Simple vocabulary building (planet, star, moon, space, universe)",
+                    "Basic emotions through cosmic characters (happy Sun, sleepy Moon)",
+                    "Color recognition through different planets and stars",
+                    "Simple patterns in space (repeating star patterns, planet rings)",
+                    "Basic concepts of distance (some stars are far away, Moon is closer)",
+                    "Introduction to the concept of time through day/night cycle"
                 ]
             },
             "agent": "Expert Educational Content Researcher\n",
@@ -72,77 +43,67 @@
             "name": "develop_story_outline_task",
             "expected_output": "Title of the book, character descriptions, plot points, core vocabulary words, and educational elements.\n",
             "summary": "Create a detailed story outline based on the research findings...",
-            "raw": "{\n  \"title\": \"The Cosmic Journey: A Baby Star's Adventure Through Our Amazing Universe\",\n  \"character_descriptions\": [\n    \"Twinkle - A curious and bright baby star who loves to explore the universe\",\n    \"Mama Star - A wise, glowing parent star who guides Twinkle through space\",\n    \"Luna - A friendly Moon who teaches about orbits and phases\",\n    \"Earth - A blue-green planet who shows Twinkle about day and night\",\n    \"Sun - A warm, bright star who explains about light and heat\"\n  ],\n  \"pages\": [\n    {\n      \"core_vocabulary\": \"Universe\",\n      \"plot_point\": \"Long ago, the universe was tiny like a seed, then grew big with a Bang!\",\n      \"educational_elements\": \"Introduction to Big Bang concept through seed metaphor\"\n    },\n    {\n      \"core_vocabulary\": \"Star\",\n      \"plot_point\": \"Baby star Twinkle opens their eyes in a sparkly galaxy.\",\n      \"educational_elements\": \"Basic star concept and galaxy introduction\"\n    },\n    {\n      \"core_vocabulary\": \"Light\",\n      \"plot_point\": \"Twinkle glows bright and dim while playing hide-and-seek.\",\n      \"educational_elements\": \"Different star brightness levels\"\n    },\n    {\n      \"core_vocabulary\": \"Planet\",\n      \"plot_point\": \"Twinkle meets round planets spinning in space.\",\n      \"educational_elements\": \"Planet shapes and rotation concept\"\n    },\n    {\n      \"core_vocabulary\": \"Earth\",\n      \"plot_point\": \"Earth shows Twinkle its blue oceans and green lands.\",\n      \"educational_elements\": \"Earth's appearance and colors\"\n    },\n    {\n      \"core_vocabulary\": \"Moon\",\n      \"plot_point\": \"Luna the Moon dances around Earth in circles.\",\n      \"educational_elements\": \"Moon's orbit and movement\"\n    },\n    {\n      \"core_vocabulary\": \"Day\",\n      \"plot_point\": \"The Sun makes Earth's day bright and warm.\",\n      \"educational_elements\": \"Day/night cycle basics\"\n    },\n    {\n      \"core_vocabulary\": \"Night\",\n      \"plot_point\": \"At night, Twinkle and friends sparkle in the dark sky.\",\n      \"educational_elements\": \"Night sky observation\"\n    },\n    {\n      \"core_vocabulary\": \"Telescope\",\n      \"plot_point\": \"Children on Earth look up at Twinkle through telescopes.\",\n      \"educational_elements\": \"Introduction to astronomy tools\"\n    },\n    {\n      \"core_vocabulary\": \"Rocket\",\n      \"plot_point\": \"A rocket zooms up to visit space with brave astronauts.\",\n      \"educational_elements\": \"Space exploration concept\"\n    },\n    {\n      \"core_vocabulary\": \"Count\",\n      \"plot_point\": \"Twinkle counts 1-2-3-4-5 planets spinning by.\",\n      \"educational_elements\": \"Basic counting practice\"\n    },\n    {\n      \"core_vocabulary\": \"Home\",\n      \"plot_point\": \"Twinkle learns Earth is everyone's special home in space.\",\n      \"educational_elements\": \"Environmental awareness\"\n    }\n  ]\n}",
+            "raw": "{\n  \"title\": \"Stella's Cosmic Journey: A Little Star's Adventure Through Our Amazing Universe\",\n  \"character_descriptions\": [\n    \"Stella - A curious young star who loves to explore and learn about the universe\",\n    \"Papa Sun - The wise, warm, and friendly center of our solar system\",\n    \"Luna - A gentle Moon who teaches Stella about phases and tides\",\n    \"Rocky - A playful asteroid who helps explain space objects\",\n    \"The Planet Pals - Eight unique planet characters with distinct personalities\"\n  ],\n  \"pages\": [\n    {\n      \"core_vocabulary\": \"star\",\n      \"plot_point\": \"Meet Stella, a tiny star who twinkles bright in the night sky.\",\n      \"educational_elements\": \"Introduction to stars as bright objects in space\"\n    },\n    {\n      \"core_vocabulary\": \"sun\",\n      \"plot_point\": \"Papa Sun welcomes Stella to learn about our solar system.\",\n      \"educational_elements\": \"Sun as the center of our solar system, source of light and warmth\"\n    },\n    {\n      \"core_vocabulary\": \"planet\",\n      \"plot_point\": \"Stella counts the eight Planet Pals spinning around Papa Sun.\",\n      \"educational_elements\": \"Basic counting, introduction to planets\"\n    },\n    {\n      \"core_vocabulary\": \"Earth\",\n      \"plot_point\": \"Stella visits Earth, the blue planet where people live.\",\n      \"educational_elements\": \"Earth's unique features - water, land, and atmosphere\"\n    },\n    {\n      \"core_vocabulary\": \"moon\",\n      \"plot_point\": \"Luna the Moon shows Stella how she changes shape each night.\",\n      \"educational_elements\": \"Basic introduction to moon phases\"\n    },\n    {\n      \"core_vocabulary\": \"space\",\n      \"plot_point\": \"Rocky the asteroid teaches Stella about floating in space.\",\n      \"educational_elements\": \"Simple concept of gravity and movement in space\"\n    },\n    {\n      \"core_vocabulary\": \"day\",\n      \"plot_point\": \"Stella watches Earth spin to make day and night.\",\n      \"educational_elements\": \"Day/night cycle concept\"\n    },\n    {\n      \"core_vocabulary\": \"constellation\",\n      \"plot_point\": \"Stella plays connect-the-dots with other stars to make pictures.\",\n      \"educational_elements\": \"Introduction to constellations\"\n    },\n    {\n      \"core_vocabulary\": \"rocket\",\n      \"plot_point\": \"A friendly rocket zooms by, exploring the universe.\",\n      \"educational_elements\": \"Basic space exploration concepts\"\n    },\n    {\n      \"core_vocabulary\": \"universe\",\n      \"plot_point\": \"Stella realizes how special our universe is and returns home to twinkle.\",\n      \"educational_elements\": \"Appreciation for space and cosmic wonder\"\n    }\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "title": "The Cosmic Journey: A Baby Star's Adventure Through Our Amazing Universe",
+                "title": "Stella's Cosmic Journey: A Little Star's Adventure Through Our Amazing Universe",
                 "character_descriptions": [
-                    "Twinkle - A curious and bright baby star who loves to explore the universe",
-                    "Mama Star - A wise, glowing parent star who guides Twinkle through space",
-                    "Luna - A friendly Moon who teaches about orbits and phases",
-                    "Earth - A blue-green planet who shows Twinkle about day and night",
-                    "Sun - A warm, bright star who explains about light and heat"
+                    "Stella - A curious young star who loves to explore and learn about the universe",
+                    "Papa Sun - The wise, warm, and friendly center of our solar system",
+                    "Luna - A gentle Moon who teaches Stella about phases and tides",
+                    "Rocky - A playful asteroid who helps explain space objects",
+                    "The Planet Pals - Eight unique planet characters with distinct personalities"
                 ],
                 "pages": [
                     {
-                        "core_vocabulary": "Universe",
-                        "plot_point": "Long ago, the universe was tiny like a seed, then grew big with a Bang!",
-                        "educational_elements": "Introduction to Big Bang concept through seed metaphor"
+                        "core_vocabulary": "star",
+                        "plot_point": "Meet Stella, a tiny star who twinkles bright in the night sky.",
+                        "educational_elements": "Introduction to stars as bright objects in space"
                     },
                     {
-                        "core_vocabulary": "Star",
-                        "plot_point": "Baby star Twinkle opens their eyes in a sparkly galaxy.",
-                        "educational_elements": "Basic star concept and galaxy introduction"
+                        "core_vocabulary": "sun",
+                        "plot_point": "Papa Sun welcomes Stella to learn about our solar system.",
+                        "educational_elements": "Sun as the center of our solar system, source of light and warmth"
                     },
                     {
-                        "core_vocabulary": "Light",
-                        "plot_point": "Twinkle glows bright and dim while playing hide-and-seek.",
-                        "educational_elements": "Different star brightness levels"
-                    },
-                    {
-                        "core_vocabulary": "Planet",
-                        "plot_point": "Twinkle meets round planets spinning in space.",
-                        "educational_elements": "Planet shapes and rotation concept"
+                        "core_vocabulary": "planet",
+                        "plot_point": "Stella counts the eight Planet Pals spinning around Papa Sun.",
+                        "educational_elements": "Basic counting, introduction to planets"
                     },
                     {
                         "core_vocabulary": "Earth",
-                        "plot_point": "Earth shows Twinkle its blue oceans and green lands.",
-                        "educational_elements": "Earth's appearance and colors"
+                        "plot_point": "Stella visits Earth, the blue planet where people live.",
+                        "educational_elements": "Earth's unique features - water, land, and atmosphere"
                     },
                     {
-                        "core_vocabulary": "Moon",
-                        "plot_point": "Luna the Moon dances around Earth in circles.",
-                        "educational_elements": "Moon's orbit and movement"
+                        "core_vocabulary": "moon",
+                        "plot_point": "Luna the Moon shows Stella how she changes shape each night.",
+                        "educational_elements": "Basic introduction to moon phases"
                     },
                     {
-                        "core_vocabulary": "Day",
-                        "plot_point": "The Sun makes Earth's day bright and warm.",
-                        "educational_elements": "Day/night cycle basics"
+                        "core_vocabulary": "space",
+                        "plot_point": "Rocky the asteroid teaches Stella about floating in space.",
+                        "educational_elements": "Simple concept of gravity and movement in space"
                     },
                     {
-                        "core_vocabulary": "Night",
-                        "plot_point": "At night, Twinkle and friends sparkle in the dark sky.",
-                        "educational_elements": "Night sky observation"
+                        "core_vocabulary": "day",
+                        "plot_point": "Stella watches Earth spin to make day and night.",
+                        "educational_elements": "Day/night cycle concept"
                     },
                     {
-                        "core_vocabulary": "Telescope",
-                        "plot_point": "Children on Earth look up at Twinkle through telescopes.",
-                        "educational_elements": "Introduction to astronomy tools"
+                        "core_vocabulary": "constellation",
+                        "plot_point": "Stella plays connect-the-dots with other stars to make pictures.",
+                        "educational_elements": "Introduction to constellations"
                     },
                     {
-                        "core_vocabulary": "Rocket",
-                        "plot_point": "A rocket zooms up to visit space with brave astronauts.",
-                        "educational_elements": "Space exploration concept"
+                        "core_vocabulary": "rocket",
+                        "plot_point": "A friendly rocket zooms by, exploring the universe.",
+                        "educational_elements": "Basic space exploration concepts"
                     },
                     {
-                        "core_vocabulary": "Count",
-                        "plot_point": "Twinkle counts 1-2-3-4-5 planets spinning by.",
-                        "educational_elements": "Basic counting practice"
-                    },
-                    {
-                        "core_vocabulary": "Home",
-                        "plot_point": "Twinkle learns Earth is everyone's special home in space.",
-                        "educational_elements": "Environmental awareness"
+                        "core_vocabulary": "universe",
+                        "plot_point": "Stella realizes how special our universe is and returns home to twinkle.",
+                        "educational_elements": "Appreciation for space and cosmic wonder"
                     }
                 ]
             },
@@ -154,36 +115,32 @@
             "name": "write_story_content_task",
             "expected_output": "Complete story text broken down by pages, with age-appropriate language, engaging narrative, and consistent pacing throughout the book.\n",
             "summary": "Transform the approved story outline into engaging, age-appropriate prose for...",
-            "raw": "{\n  \"page_vocabularies\": [\n    \"Universe\",\n    \"Star\",\n    \"Light\",\n    \"Planet\",\n    \"Earth\",\n    \"Moon\",\n    \"Day\",\n    \"Night\",\n    \"Telescope\",\n    \"Rocket\",\n    \"Count\",\n    \"Home\"\n  ],\n  \"page_contents\": [\n    \"The Universe began tiny like a seed and grew into something amazing!\",\n    \"A baby Star named Twinkle wakes up in a sparkly space family.\",\n    \"Twinkle's Light dances bright and dim like a magical game.\",\n    \"Each Planet spins around like a merry-go-round in space.\",\n    \"Earth wears a pretty blue and green dress of oceans and lands.\",\n    \"The Moon plays circle games around Earth every night.\",\n    \"Day comes when the Sun shares warm hugs with Earth.\",\n    \"At Night, Twinkle joins friends to make the sky pretty.\",\n    \"Children point their Telescopes up to see Twinkle shine.\",\n    \"A big Rocket flies up high to say hello to space friends.\",\n    \"Count with Twinkle as planets go by: one, two, three, four, five!\",\n    \"Earth is Home to everyone, a special blue marble in space.\"\n  ]\n}",
+            "raw": "{\n  \"page_vocabularies\": [\n    \"star\",\n    \"sun\",\n    \"planet\",\n    \"Earth\",\n    \"moon\",\n    \"space\",\n    \"day\",\n    \"constellation\",\n    \"rocket\",\n    \"universe\"\n  ],\n  \"page_contents\": [\n    \"High in the sky, a tiny star named Stella twinkles and shines so bright.\",\n    \"Warm and glowing Papa Sun smiles and says 'Welcome to our solar system!'\",\n    \"Stella counts eight colorful planets dancing around Papa Sun.\",\n    \"Earth is a beautiful blue planet where people and animals make their home.\",\n    \"Luna the Moon shows Stella how she changes from round to crescent each night.\",\n    \"Rocky the Asteroid teaches Stella how to float and spin through space.\",\n    \"Stella watches Earth turn around to make day become night.\",\n    \"Stella plays a fun game connecting stars to make constellation pictures.\",\n    \"A friendly silver rocket zooms past Stella on its space adventure.\",\n    \"Stella smiles, knowing our universe is filled with wonderful things to discover.\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
                 "page_vocabularies": [
-                    "Universe",
-                    "Star",
-                    "Light",
-                    "Planet",
+                    "star",
+                    "sun",
+                    "planet",
                     "Earth",
-                    "Moon",
-                    "Day",
-                    "Night",
-                    "Telescope",
-                    "Rocket",
-                    "Count",
-                    "Home"
+                    "moon",
+                    "space",
+                    "day",
+                    "constellation",
+                    "rocket",
+                    "universe"
                 ],
                 "page_contents": [
-                    "The Universe began tiny like a seed and grew into something amazing!",
-                    "A baby Star named Twinkle wakes up in a sparkly space family.",
-                    "Twinkle's Light dances bright and dim like a magical game.",
-                    "Each Planet spins around like a merry-go-round in space.",
-                    "Earth wears a pretty blue and green dress of oceans and lands.",
-                    "The Moon plays circle games around Earth every night.",
-                    "Day comes when the Sun shares warm hugs with Earth.",
-                    "At Night, Twinkle joins friends to make the sky pretty.",
-                    "Children point their Telescopes up to see Twinkle shine.",
-                    "A big Rocket flies up high to say hello to space friends.",
-                    "Count with Twinkle as planets go by: one, two, three, four, five!",
-                    "Earth is Home to everyone, a special blue marble in space."
+                    "High in the sky, a tiny star named Stella twinkles and shines so bright.",
+                    "Warm and glowing Papa Sun smiles and says 'Welcome to our solar system!'",
+                    "Stella counts eight colorful planets dancing around Papa Sun.",
+                    "Earth is a beautiful blue planet where people and animals make their home.",
+                    "Luna the Moon shows Stella how she changes from round to crescent each night.",
+                    "Rocky the Asteroid teaches Stella how to float and spin through space.",
+                    "Stella watches Earth turn around to make day become night.",
+                    "Stella plays a fun game connecting stars to make constellation pictures.",
+                    "A friendly silver rocket zooms past Stella on its space adventure.",
+                    "Stella smiles, knowing our universe is filled with wonderful things to discover."
                 ]
             },
             "agent": "Versatile Children's Content Creator\n",
@@ -194,10 +151,10 @@
             "name": "design_art_direction_task",
             "expected_output": "Character design specifications, color palette, visual style guidelines.\n",
             "summary": "Develop comprehensive visual style guidelines for the book's illustrations based...",
-            "raw": "{\n  \"art_direction\": \"CHARACTER DESIGN SPECIFICATIONS:\n- Main Character (Twinkle the Star): Design as a cute, anthropomorphic star with gentle curves and a warm smile. Features include big expressive eyes, soft rounded points, and a subtle golden glow. Size should be consistent across all illustrations at 15-20% of frame height.\n- Supporting Characters: Planets should have distinct but harmonious personalities through simple facial features. Earth should wear a recognizable 'dress' of blues and greens. Moon should appear gentle and peaceful with soft crater details.\n- Scale Consistency: Maintain relative size relationships while allowing artistic liberty for storytelling (Earth can be shown both realistically small and dramatically large when featured).\n\nCOLOR PALETTE:\nPrimary Colors:\n- Deep Space Blue: #1B1B3A (background base)\n- Cosmic Purple: #4B0082 (space depth)\n- Stardust Gold: #FFD700 (Twinkle's glow)\n- Earth Blue: #4B9CD3 (oceans)\n- Forest Green: #228B22 (landmasses)\n- Moonlight Silver: #E6E6FA (moon surface)\n\nAccent Colors:\n- Warm Red: #FF6B6B (rocket details)\n- Soft Orange: #FFA07A (warm highlights)\n- Gentle Pink: #FFB6C1 (star clusters)\n\nVISUAL STYLE GUIDELINES:\n1. Illustration Style:\n   - Soft, rounded shapes with minimal sharp edges\n   - Simple but expressive facial features\n   - Gentle gradients instead of harsh shadows\n   - Layered transparency for space effects\n   - No complex textures for young audience\n\n2. Space Environment:\n   - Create depth through size variation and layering\n   - Include subtle star clusters and nebulas in backgrounds\n   - Use motion lines sparingly to show movement\n   - Maintain 30% negative space for visual breathing room\n\n3. Composition Rules:\n   - Center primary action in middle 60% of frame\n   - Keep horizon lines simple and clear\n   - Use rule of thirds for major elements\n   - Ensure text areas remain clear of crucial visual elements\n\n4. Lighting Effects:\n   - Soft glow around stars and celestial bodies\n   - Gentle rim lighting on planets\n   - Ambient light scatter for space atmosphere\n   - Avoid harsh contrasts or dark shadows\n\n5. Page-Specific Requirements:\n   - Pages 1-3: Focus on Twinkle's introduction with warm, inviting colors\n   - Pages 4-6: Show planetary motion through subtle curved lines\n   - Pages 7-8: Clear day/night contrast while maintaining palette harmony\n   - Pages 9-10: Earth-based perspective showing relatable human elements\n   - Pages 11-12: Simple number placement with clear counting elements\n\n6. Consistency Checklist:\n   - Character expressions maintain personality\n   - Size relationships remain constant\n   - Color palette used consistently\n   - Background complexity stays appropriate for age group\n   - Light sources remain consistent within scenes\n\n7. Technical Specifications:\n   - Resolution: 300 DPI minimum\n   - Format: CMYK color space\n   - Safe zone: 0.25\\\" margin from trim\n   - Bleed: 0.125\\\" beyond trim\n   - File format: Layered PSD/AI files\"\n}",
+            "raw": "{\n  \"art_direction\": \"CHARACTER DESIGN SPECIFICATIONS:\n- Stella (Star): Design as a cute, round star with big expressive eyes, rosy cheeks, and a gentle smile. Size should be approximately 20% of page width. Add subtle sparkle effects around edges.\n- Papa Sun: Large, warm character with gentle facial features. Create radiating corona that appears like kind arms. Should occupy 30-40% of page when featured.\n- Luna (Moon): Soft, curved character with dreamy expression. Design should work in both full and crescent shapes while maintaining recognizable features.\n- Rocky (Asteroid): Small, playful character with textured surface but friendly appearance. Add small details like tiny craters that don't overwhelm.\n- Planets: Each planet should have distinct personality while maintaining cohesive style. Use simplified but recognizable features (Saturn's rings, Jupiter's spot, Earth's continents).\n- Rocket: Rounded edges, non-threatening design with cheerful colors. Should appear welcoming rather than technical.\n\nCOLOR PALETTE:\nPrimary Colors:\n- Space Background: Deep indigo (#1B1B3A) to navy (#0C164F)\n- Stella Gold: Warm yellow (#FFD700)\n- Papa Sun Orange: Soft orange (#FFB347)\n- Earth Blues: Sky blue (#87CEEB) to turquoise (#40E0D0)\n- Luna Silver: Soft gray-white (#E1E5EA)\nAccent Colors:\n- Cosmic Pink: (#FFB6C1)\n- Stardust Purple: (#9370DB)\n- Planet Greens: (#98FF98)\n- Gentle Red: (#FF6B6B)\n\nVISUAL STYLE GUIDELINES:\n1. Overall Aesthetic:\n- Soft, rounded shapes with no sharp edges\n- Gentle gradients instead of solid colors\n- Subtle texture overlays for depth\n- Warm, inviting glow effects around light sources\n\n2. Composition Rules:\n- Center important characters\n- Leave 20% padding around edges for text\n- Maintain clear figure-ground relationship\n- Use curved design elements to guide eye movement\n\n3. Illustration Technique:\n- Vector-based style with subtle gradient overlays\n- Minimal shadow usage (max 20% opacity)\n- Star field backgrounds should be sparse and organized\n- Limited detail level appropriate for young children\n\n4. Movement and Energy:\n- Gentle curved motion lines\n- Floating/drifting effects for space elements\n- Subtle twinkling animations if digital\n- Smooth transitions between elements\n\n5. Safety Considerations:\n- No flashing or overwhelming patterns\n- Avoid scary or threatening imagery\n- Maintain consistent scale relationships\n- Use soothing color combinations\n\n6. Page-to-Page Consistency:\n- Maintain character scale across scenes\n- Use consistent lighting direction\n- Keep color palette cohesive\n- Repeat key visual elements as anchors\n\n7. Text Integration:\n- Leave clear space for text placement\n- Use complementary visual elements to frame text\n- Ensure sufficient contrast for readability\n- Balance illustration and text space 60/40\"\n}",
             "pydantic": null,
             "json_dict": {
-                "art_direction": "CHARACTER DESIGN SPECIFICATIONS:\n- Main Character (Twinkle the Star): Design as a cute, anthropomorphic star with gentle curves and a warm smile. Features include big expressive eyes, soft rounded points, and a subtle golden glow. Size should be consistent across all illustrations at 15-20% of frame height.\n- Supporting Characters: Planets should have distinct but harmonious personalities through simple facial features. Earth should wear a recognizable 'dress' of blues and greens. Moon should appear gentle and peaceful with soft crater details.\n- Scale Consistency: Maintain relative size relationships while allowing artistic liberty for storytelling (Earth can be shown both realistically small and dramatically large when featured).\n\nCOLOR PALETTE:\nPrimary Colors:\n- Deep Space Blue: #1B1B3A (background base)\n- Cosmic Purple: #4B0082 (space depth)\n- Stardust Gold: #FFD700 (Twinkle's glow)\n- Earth Blue: #4B9CD3 (oceans)\n- Forest Green: #228B22 (landmasses)\n- Moonlight Silver: #E6E6FA (moon surface)\n\nAccent Colors:\n- Warm Red: #FF6B6B (rocket details)\n- Soft Orange: #FFA07A (warm highlights)\n- Gentle Pink: #FFB6C1 (star clusters)\n\nVISUAL STYLE GUIDELINES:\n1. Illustration Style:\n   - Soft, rounded shapes with minimal sharp edges\n   - Simple but expressive facial features\n   - Gentle gradients instead of harsh shadows\n   - Layered transparency for space effects\n   - No complex textures for young audience\n\n2. Space Environment:\n   - Create depth through size variation and layering\n   - Include subtle star clusters and nebulas in backgrounds\n   - Use motion lines sparingly to show movement\n   - Maintain 30% negative space for visual breathing room\n\n3. Composition Rules:\n   - Center primary action in middle 60% of frame\n   - Keep horizon lines simple and clear\n   - Use rule of thirds for major elements\n   - Ensure text areas remain clear of crucial visual elements\n\n4. Lighting Effects:\n   - Soft glow around stars and celestial bodies\n   - Gentle rim lighting on planets\n   - Ambient light scatter for space atmosphere\n   - Avoid harsh contrasts or dark shadows\n\n5. Page-Specific Requirements:\n   - Pages 1-3: Focus on Twinkle's introduction with warm, inviting colors\n   - Pages 4-6: Show planetary motion through subtle curved lines\n   - Pages 7-8: Clear day/night contrast while maintaining palette harmony\n   - Pages 9-10: Earth-based perspective showing relatable human elements\n   - Pages 11-12: Simple number placement with clear counting elements\n\n6. Consistency Checklist:\n   - Character expressions maintain personality\n   - Size relationships remain constant\n   - Color palette used consistently\n   - Background complexity stays appropriate for age group\n   - Light sources remain consistent within scenes\n\n7. Technical Specifications:\n   - Resolution: 300 DPI minimum\n   - Format: CMYK color space\n   - Safe zone: 0.25\" margin from trim\n   - Bleed: 0.125\" beyond trim\n   - File format: Layered PSD/AI files"
+                "art_direction": "CHARACTER DESIGN SPECIFICATIONS:\n- Stella (Star): Design as a cute, round star with big expressive eyes, rosy cheeks, and a gentle smile. Size should be approximately 20% of page width. Add subtle sparkle effects around edges.\n- Papa Sun: Large, warm character with gentle facial features. Create radiating corona that appears like kind arms. Should occupy 30-40% of page when featured.\n- Luna (Moon): Soft, curved character with dreamy expression. Design should work in both full and crescent shapes while maintaining recognizable features.\n- Rocky (Asteroid): Small, playful character with textured surface but friendly appearance. Add small details like tiny craters that don't overwhelm.\n- Planets: Each planet should have distinct personality while maintaining cohesive style. Use simplified but recognizable features (Saturn's rings, Jupiter's spot, Earth's continents).\n- Rocket: Rounded edges, non-threatening design with cheerful colors. Should appear welcoming rather than technical.\n\nCOLOR PALETTE:\nPrimary Colors:\n- Space Background: Deep indigo (#1B1B3A) to navy (#0C164F)\n- Stella Gold: Warm yellow (#FFD700)\n- Papa Sun Orange: Soft orange (#FFB347)\n- Earth Blues: Sky blue (#87CEEB) to turquoise (#40E0D0)\n- Luna Silver: Soft gray-white (#E1E5EA)\nAccent Colors:\n- Cosmic Pink: (#FFB6C1)\n- Stardust Purple: (#9370DB)\n- Planet Greens: (#98FF98)\n- Gentle Red: (#FF6B6B)\n\nVISUAL STYLE GUIDELINES:\n1. Overall Aesthetic:\n- Soft, rounded shapes with no sharp edges\n- Gentle gradients instead of solid colors\n- Subtle texture overlays for depth\n- Warm, inviting glow effects around light sources\n\n2. Composition Rules:\n- Center important characters\n- Leave 20% padding around edges for text\n- Maintain clear figure-ground relationship\n- Use curved design elements to guide eye movement\n\n3. Illustration Technique:\n- Vector-based style with subtle gradient overlays\n- Minimal shadow usage (max 20% opacity)\n- Star field backgrounds should be sparse and organized\n- Limited detail level appropriate for young children\n\n4. Movement and Energy:\n- Gentle curved motion lines\n- Floating/drifting effects for space elements\n- Subtle twinkling animations if digital\n- Smooth transitions between elements\n\n5. Safety Considerations:\n- No flashing or overwhelming patterns\n- Avoid scary or threatening imagery\n- Maintain consistent scale relationships\n- Use soothing color combinations\n\n6. Page-to-Page Consistency:\n- Maintain character scale across scenes\n- Use consistent lighting direction\n- Keep color palette cohesive\n- Repeat key visual elements as anchors\n\n7. Text Integration:\n- Leave clear space for text placement\n- Use complementary visual elements to frame text\n- Ensure sufficient contrast for readability\n- Balance illustration and text space 60/40"
             },
             "agent": "Children's Book Art Director\n",
             "output_format": "json"
@@ -207,22 +164,45 @@
             "name": "create_illustrations_task",
             "expected_output": "High-quality AI illustration prompts (e.g. for Midjourney) for each page that align with the art direction, content, and age-appropriate visual complexity.\n",
             "summary": "Using AI image generation tools, create illustrations for each page...",
-            "raw": "{\n  \"illustrations\": [\n    \"A magical tiny glowing seed floating in deep space (color #1B1B3A), expanding into swirling cosmic ribbons of stardust (#FFD700) and gentle nebulas (#4B0082). Sacred geometry patterns emerge with soft edges, creating a child-friendly visualization of the Big Bang. Soft lighting, dreamy atmosphere, children's book style --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Cute baby star Twinkle with big expressive eyes and soft rounded points, glowing golden (#FFD700), waking up in a sparkly galaxy. Surrounded by gentle star clusters (#FFB6C1) and loving parent stars. Kawaii style, soft gradients, warm lighting --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Playful baby star Twinkle playing hide-and-seek, alternating between bright (#FFD700) and dim glow. Cosmic purple background (#4B0082) with scattered stardust. Whimsical composition, gentle motion lines, expression of joy --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Smiling anthropomorphic planets spinning in space, arranged in a merry-go-round formation. Each with simple, friendly faces. Twinkle watching from center. Deep space background (#1B1B3A) with subtle star clusters. Curved motion lines showing rotation --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Earth wearing a dress of vibrant blue oceans (#4B9CD3) and green continents (#228B22), smiling warmly at Twinkle. Soft atmospheric glow, gentle clouds, friendly character design. Space background with 30% negative space --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Gentle Luna moon (#E6E6FA) with soft crater details dancing in circles around Earth. Simple orbital path marked by stardust (#FFD700). Twinkle watching from corner. Peaceful composition, flowing movement --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Warm, bright Sun character sharing light with Earth, creating a cozy daytime scene. Golden rays (#FFD700) spreading across space. Earth's day side clearly illuminated. Cheerful composition --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Nighttime scene with Twinkle and star friends twinkling in dark sky (#1B1B3A). Earth visible below with city lights. Peaceful composition with layered star clusters (#FFB6C1) --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Children using telescopes in a nighttime garden, looking up at Twinkle. Warm telescope details (#FF6B6B), expressing wonder and discovery. Starry sky above with Twinkle prominently displayed --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Friendly red and white rocket (#FF6B6B) soaring upward with smiling astronauts waving through windows. Curved motion lines showing ascent. Twinkle and space friends welcoming from above --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Five planets in clear counting sequence, each with distinct but harmonious designs. Twinkle pointing to each as they spin by. Numbers subtly integrated into cosmic swirls. Clean composition for easy counting --ar 4:3 --style children's book illustration --v 5\",\n    \n    \"Earth as a precious blue marble in space, surrounded by protecting stars including Twinkle. Gentle environmental message through warm colors and protective composition. Beautiful space home scene --ar 4:3 --style children's book illustration --v 5\"\n  ]\n}",
+            "raw": "{\n  \"illustration_prompts\": [\n    \"Cute cartoon baby star character with big expressive eyes and rosy cheeks, twinkling against a deep indigo space background, soft rounded shapes, gentle gradients, warm yellow glow (#FFD700), playful and friendly appearance, simple star field in background, children's book style, vector art aesthetic\",\n    \n    \"Large friendly sun character with gentle smile and warm orange glow (#FFB347), radiating corona like kind arms, welcoming pose, deep space background (#1B1B3A), soft gradients, cute small star character nearby for scale, children's book style, vector art aesthetic\",\n    \n    \"Eight adorable planet characters in orbit formation, each with unique cheerful expressions, simplified recognizable features, cute small star character in foreground, warm glowing sun in center, gentle curved motion lines, soft color palette, children's book style, vector art aesthetic\",\n    \n    \"Beautiful blue and turquoise Earth character (#87CEEB, #40E0D0) with friendly face, simplified continents, fluffy white clouds, cute small star character visiting, warm welcoming atmosphere, gentle glow effects, children's book style, vector art aesthetic\",\n    \n    \"Gentle silver-white moon character (#E1E5EA) showing different phases, dreamy expression, cute star character watching with wonder, soft purple space background (#9370DB), twinkling stars, rounded shapes, children's book style, vector art aesthetic\",\n    \n    \"Playful small asteroid character with friendly face and tiny craters, teaching cute star character how to float, gentle motion lines, deep space background with soft gradients, warm lighting, children's book style, vector art aesthetic\",\n    \n    \"Earth character slowly spinning with day and night sides, cute star character watching with fascination, soft light transitions, gentle blues and indigos, warm sunlight on day side, twinkling stars on night side, children's book style, vector art aesthetic\",\n    \n    \"Cute star character connecting bright stars with gentle light trails, forming simple constellation patterns, deep purple space background (#9370DB), soft glowing effects, playful composition, children's book style, vector art aesthetic\",\n    \n    \"Friendly silver rocket with rounded edges and cheerful colors, gentle vapor trail, cute star character watching with wonder, deep space background with sparse stars, soft lighting, children's book style, vector art aesthetic\",\n    \n    \"Cute star character twinkling happily, surrounded by simplified space elements (planets, moon, sun, stars), warm color palette, gentle glow effects, celebrating the wonder of space, children's book style, vector art aesthetic\"\n  ]\n}",
             "pydantic": null,
             "json_dict": {
-                "illustrations": [
-                    "A magical tiny glowing seed floating in deep space (color #1B1B3A), expanding into swirling cosmic ribbons of stardust (#FFD700) and gentle nebulas (#4B0082). Sacred geometry patterns emerge with soft edges, creating a child-friendly visualization of the Big Bang. Soft lighting, dreamy atmosphere, children's book style --ar 4:3 --style children's book illustration --v 5",
-                    "Cute baby star Twinkle with big expressive eyes and soft rounded points, glowing golden (#FFD700), waking up in a sparkly galaxy. Surrounded by gentle star clusters (#FFB6C1) and loving parent stars. Kawaii style, soft gradients, warm lighting --ar 4:3 --style children's book illustration --v 5",
-                    "Playful baby star Twinkle playing hide-and-seek, alternating between bright (#FFD700) and dim glow. Cosmic purple background (#4B0082) with scattered stardust. Whimsical composition, gentle motion lines, expression of joy --ar 4:3 --style children's book illustration --v 5",
-                    "Smiling anthropomorphic planets spinning in space, arranged in a merry-go-round formation. Each with simple, friendly faces. Twinkle watching from center. Deep space background (#1B1B3A) with subtle star clusters. Curved motion lines showing rotation --ar 4:3 --style children's book illustration --v 5",
-                    "Earth wearing a dress of vibrant blue oceans (#4B9CD3) and green continents (#228B22), smiling warmly at Twinkle. Soft atmospheric glow, gentle clouds, friendly character design. Space background with 30% negative space --ar 4:3 --style children's book illustration --v 5",
-                    "Gentle Luna moon (#E6E6FA) with soft crater details dancing in circles around Earth. Simple orbital path marked by stardust (#FFD700). Twinkle watching from corner. Peaceful composition, flowing movement --ar 4:3 --style children's book illustration --v 5",
-                    "Warm, bright Sun character sharing light with Earth, creating a cozy daytime scene. Golden rays (#FFD700) spreading across space. Earth's day side clearly illuminated. Cheerful composition --ar 4:3 --style children's book illustration --v 5",
-                    "Nighttime scene with Twinkle and star friends twinkling in dark sky (#1B1B3A). Earth visible below with city lights. Peaceful composition with layered star clusters (#FFB6C1) --ar 4:3 --style children's book illustration --v 5",
-                    "Children using telescopes in a nighttime garden, looking up at Twinkle. Warm telescope details (#FF6B6B), expressing wonder and discovery. Starry sky above with Twinkle prominently displayed --ar 4:3 --style children's book illustration --v 5",
-                    "Friendly red and white rocket (#FF6B6B) soaring upward with smiling astronauts waving through windows. Curved motion lines showing ascent. Twinkle and space friends welcoming from above --ar 4:3 --style children's book illustration --v 5",
-                    "Five planets in clear counting sequence, each with distinct but harmonious designs. Twinkle pointing to each as they spin by. Numbers subtly integrated into cosmic swirls. Clean composition for easy counting --ar 4:3 --style children's book illustration --v 5",
-                    "Earth as a precious blue marble in space, surrounded by protecting stars including Twinkle. Gentle environmental message through warm colors and protective composition. Beautiful space home scene --ar 4:3 --style children's book illustration --v 5"
+                "illustration_prompts": [
+                    "Cute cartoon baby star character with big expressive eyes and rosy cheeks, twinkling against a deep indigo space background, soft rounded shapes, gentle gradients, warm yellow glow (#FFD700), playful and friendly appearance, simple star field in background, children's book style, vector art aesthetic",
+                    "Large friendly sun character with gentle smile and warm orange glow (#FFB347), radiating corona like kind arms, welcoming pose, deep space background (#1B1B3A), soft gradients, cute small star character nearby for scale, children's book style, vector art aesthetic",
+                    "Eight adorable planet characters in orbit formation, each with unique cheerful expressions, simplified recognizable features, cute small star character in foreground, warm glowing sun in center, gentle curved motion lines, soft color palette, children's book style, vector art aesthetic",
+                    "Beautiful blue and turquoise Earth character (#87CEEB, #40E0D0) with friendly face, simplified continents, fluffy white clouds, cute small star character visiting, warm welcoming atmosphere, gentle glow effects, children's book style, vector art aesthetic",
+                    "Gentle silver-white moon character (#E1E5EA) showing different phases, dreamy expression, cute star character watching with wonder, soft purple space background (#9370DB), twinkling stars, rounded shapes, children's book style, vector art aesthetic",
+                    "Playful small asteroid character with friendly face and tiny craters, teaching cute star character how to float, gentle motion lines, deep space background with soft gradients, warm lighting, children's book style, vector art aesthetic",
+                    "Earth character slowly spinning with day and night sides, cute star character watching with fascination, soft light transitions, gentle blues and indigos, warm sunlight on day side, twinkling stars on night side, children's book style, vector art aesthetic",
+                    "Cute star character connecting bright stars with gentle light trails, forming simple constellation patterns, deep purple space background (#9370DB), soft glowing effects, playful composition, children's book style, vector art aesthetic",
+                    "Friendly silver rocket with rounded edges and cheerful colors, gentle vapor trail, cute star character watching with wonder, deep space background with sparse stars, soft lighting, children's book style, vector art aesthetic",
+                    "Cute star character twinkling happily, surrounded by simplified space elements (planets, moon, sun, stars), warm color palette, gentle glow effects, celebrating the wonder of space, children's book style, vector art aesthetic"
+                ]
+            },
+            "agent": "Children's Book AI Illustrator\n",
+            "output_format": "json"
+        },
+        {
+            "description": "Generate actual illustrations using AI image generation tools based on the prompts created. Ensure all images are generated at a consistent resolution of 1280x720 pixels or lower to maintain quality while optimizing file size. Save each generated image and track the file paths.\nNote: One illustration for one page (one-to-one)\n",
+            "name": "generate_illustrations_task",
+            "expected_output": "List of file paths to the generated illustrations, with each path corresponding to a specific page in sequential order. Also output the image size.\n",
+            "summary": "Generate actual illustrations using AI image generation tools based on...",
+            "raw": "{\n  \"image_size\": \"1280x720\",\n  \"illustration_paths\": [\n    \"/illustrations/page1_baby_star.png\",\n    \"/illustrations/page2_friendly_sun.png\",\n    \"/illustrations/page3_planet_orbit.png\",\n    \"/illustrations/page4_earth_character.png\",\n    \"/illustrations/page5_moon_phases.png\",\n    \"/illustrations/page6_asteroid_lesson.png\",\n    \"/illustrations/page7_earth_spinning.png\",\n    \"/illustrations/page8_constellation.png\",\n    \"/illustrations/page9_rocket_wonder.png\",\n    \"/illustrations/page10_celebration.png\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": {
+                "image_size": "1280x720",
+                "illustration_paths": [
+                    "/illustrations/page1_baby_star.png",
+                    "/illustrations/page2_friendly_sun.png",
+                    "/illustrations/page3_planet_orbit.png",
+                    "/illustrations/page4_earth_character.png",
+                    "/illustrations/page5_moon_phases.png",
+                    "/illustrations/page6_asteroid_lesson.png",
+                    "/illustrations/page7_earth_spinning.png",
+                    "/illustrations/page8_constellation.png",
+                    "/illustrations/page9_rocket_wonder.png",
+                    "/illustrations/page10_celebration.png"
                 ]
             },
             "agent": "Children's Book AI Illustrator\n",
@@ -233,47 +213,29 @@
             "name": "translate_content_task",
             "expected_output": "Complete translated text for each page in \"Chinese\", preserving the original story's engagement level and educational value while being culturally appropriate.\n",
             "summary": "Translate the approved text into the target language \"Chinese\", maintaining...",
-            "raw": "{\n  \"translated_page_vocabularies\": [\n    \"宇宙\",\n    \"星星\",\n    \"光芒\",\n    \"行星\",\n    \"地球\",\n    \"月亮\",\n    \"白天\",\n    \"夜晚\",\n    \"望远镜\",\n    \"火箭\",\n    \"数数\",\n    \"家园\"\n  ],\n  \"translated_contents\": [\n    \"宇宙像一颗小种子一样开始，长成了令人惊叹的样子！\",\n    \"一颗名叫闪闪的小星星在满是星光的太空家庭中醒来。\",\n    \"闪闪的光芒忽明忽暗，像在玩一场魔法游戏。\",\n    \"每颗行星都像太空中的旋转木马一样转个不停。\",\n    \"地球穿着漂亮的蓝色和绿色裙子，那是海洋和陆地。\",\n    \"月亮每天晚上都绕着地球玩圈圈游戏。\",\n    \"当太阳用温暖的拥抱迎接地球时，白天就来了。\",\n    \"夜晚时分，闪闪和朋友们一起让天空变得美丽。\",\n    \"孩子们用望远镜向上看，看着闪闪发光。\",\n    \"大火箭飞向高空，向太空的朋友们问好。\",\n    \"和闪闪一起数行星：一、二、三、四、五！\",\n    \"地球是每个人的家园，是太空中一颗特别的蓝色弹珠。\"\n  ]\n}",
+            "raw": "{\n  \"translated_page_vocabularies\": [\n    \"星星\",\n    \"太阳\",\n    \"行星\",\n    \"地球\",\n    \"月亮\",\n    \"太空\",\n    \"白天\",\n    \"星座\",\n    \"火箭\",\n    \"宇宙\"\n  ],\n  \"translated_contents\": [\n    \"在高高的天空中，一颗名叫斯特拉的小星星闪烁着明亮的光芒。\",\n    \"温暖发光的太阳爸爸微笑着说：\"欢迎来到我们的太阳系！\"\",\n    \"斯特拉数着八颗围绕太阳爸爸跳舞的彩色行星。\",\n    \"地球是一颗美丽的蓝色星球，人类和动物们在这里安居乐业。\",\n    \"月亮露娜向斯特拉展示她每晚是如何从圆月变成新月的。\",\n    \"小行星洛奇教斯特拉如何在太空中漂浮和旋转。\",\n    \"斯特拉看着地球转动，白天变成黑夜。\",\n    \"斯特拉玩着一个有趣的游戏，把星星连接起来组成星座图案。\",\n    \"一艘友好的银色火箭在太空冒险时从斯特拉身边呼啸而过。\",\n    \"斯特拉微笑着，知道我们的宇宙充满了等待发现的奇妙事物。\"\n  ]\n}",
             "pydantic": null,
-            "json_dict": {
-                "translated_page_vocabularies": [
-                    "宇宙",
-                    "星星",
-                    "光芒",
-                    "行星",
-                    "地球",
-                    "月亮",
-                    "白天",
-                    "夜晚",
-                    "望远镜",
-                    "火箭",
-                    "数数",
-                    "家园"
-                ],
-                "translated_contents": [
-                    "宇宙像一颗小种子一样开始，长成了令人惊叹的样子！",
-                    "一颗名叫闪闪的小星星在满是星光的太空家庭中醒来。",
-                    "闪闪的光芒忽明忽暗，像在玩一场魔法游戏。",
-                    "每颗行星都像太空中的旋转木马一样转个不停。",
-                    "地球穿着漂亮的蓝色和绿色裙子，那是海洋和陆地。",
-                    "月亮每天晚上都绕着地球玩圈圈游戏。",
-                    "当太阳用温暖的拥抱迎接地球时，白天就来了。",
-                    "夜晚时分，闪闪和朋友们一起让天空变得美丽。",
-                    "孩子们用望远镜向上看，看着闪闪发光。",
-                    "大火箭飞向高空，向太空的朋友们问好。",
-                    "和闪闪一起数行星：一、二、三、四、五！",
-                    "地球是每个人的家园，是太空中一颗特别的蓝色弹珠。"
-                ]
-            },
+            "json_dict": null,
             "agent": "Children's Literature Translation Specialist\n",
+            "output_format": "json"
+        },
+        {
+            "description": "Generate HTML pages that combine text content, translations, and illustrations into a cohesive layout suitable for A4 paper printing. For each page:\n1. Layout Requirements:\n   - A4 page size\n   - Proper margins and spacing\n\n2. Content Integration:\n   - Illustration\n   - English text content with core vocabulary word highlighted\n   - Translated text content with core vocabulary word highlighted\n\nEnsure consistent styling across all pages while maintaining readability and visual appeal appropriate for age range \"1-6\".\n",
+            "name": "generate_html_pages_task",
+            "expected_output": "A list of print-ready HTML pages with integrated content\n",
+            "summary": "Generate HTML pages that combine text content, translations, and illustrations...",
+            "raw": "{\n  \"html_pages\": [\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page1_baby_star.png' alt='Baby Star'><div class='text-content'><p>High in the sky, a tiny <span class='highlight'>star</span> named Stella twinkles and shines so bright.</p><p>在高高的天空中，一颗名叫斯特拉的小<span class='highlight'>星星</span>闪烁着明亮的光芒。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page2_friendly_sun.png' alt='Friendly Sun'><div class='text-content'><p>Warm and glowing Papa <span class='highlight'>sun</span> smiles and says 'Welcome to our solar system!'</p><p>温暖发光的<span class='highlight'>太阳</span>爸爸微笑着说：\"欢迎来到我们的太阳系！\"</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page3_planet_orbit.png' alt='Planet Orbit'><div class='text-content'><p>Stella counts eight colorful <span class='highlight'>planets</span> dancing around Papa Sun.</p><p>斯特拉数着八颗围绕太阳爸爸跳舞的彩色<span class='highlight'>行星</span>。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page4_earth_character.png' alt='Earth Character'><div class='text-content'><p><span class='highlight'>Earth</span> is a beautiful blue planet where people and animals make their home.</p><p><span class='highlight'>地球</span>是一颗美丽的蓝色星球，人类和动物们在这里安居乐业。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page5_moon_phases.png' alt='Moon Phases'><div class='text-content'><p>Luna the <span class='highlight'>Moon</span> shows Stella how she changes from round to crescent each night.</p><p><span class='highlight'>月亮</span>露娜向斯特拉展示她每晚是如何从圆月变成新月的。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page6_asteroid_lesson.png' alt='Asteroid Lesson'><div class='text-content'><p>Rocky the Asteroid teaches Stella how to float and spin through <span class='highlight'>space</span>.</p><p>小行星洛奇教斯特拉如何在<span class='highlight'>太空</span>中漂浮和旋转。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page7_earth_spinning.png' alt='Earth Spinning'><div class='text-content'><p>Stella watches Earth turn around to make <span class='highlight'>day</span> become night.</p><p>斯特拉看着地球转动，<span class='highlight'>白天</span>变成黑夜。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page8_constellation.png' alt='Constellation'><div class='text-content'><p>Stella plays a fun game connecting stars to make <span class='highlight'>constellation</span> pictures.</p><p>斯特拉玩着一个有趣的游戏，把星星连接起来组成<span class='highlight'>星座</span>图案。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page9_rocket_wonder.png' alt='Rocket Wonder'><div class='text-content'><p>A friendly silver <span class='highlight'>rocket</span> zooms past Stella on its space adventure.</p><p>一艘友好的银色<span class='highlight'>火箭</span>在太空冒险时从斯特拉身边呼啸而过。</p></div></div></body></html>\",\n\n    \"<!DOCTYPE html><html><head><style>@page{size:A4;margin:0}body{margin:2cm;font-family:Arial,sans-serif;font-size:14pt}.page{display:grid;grid-template-rows:auto auto auto;gap:20px;height:calc(297mm - 4cm)}.illustration{width:100%;height:auto;max-height:40%}.text-content{display:grid;gap:20px}.highlight{color:#FF6B6B;font-weight:bold}</style></head><body><div class='page'><img class='illustration' src='/illustrations/page10_celebration.png' alt='Celebration'><div class='text-content'><p>Stella smiles, knowing our <span class='highlight'>universe</span> is filled with wonderful things to discover.</p><p>斯特拉微笑着，知道我们的<span class='highlight'>宇宙</span>充满了等待发现的奇妙事物。</p></div></div></body></html>\"\n  ]\n}",
+            "pydantic": null,
+            "json_dict": null,
+            "agent": "Children's Book Page Layout Designer\n",
             "output_format": "json"
         }
     ],
     "token_usage": {
-        "total_tokens": 9986,
-        "prompt_tokens": 6062,
+        "total_tokens": 105461,
+        "prompt_tokens": 69864,
         "cached_prompt_tokens": 0,
-        "completion_tokens": 3924,
-        "successful_requests": 6
+        "completion_tokens": 35597,
+        "successful_requests": 24
     }
 }
