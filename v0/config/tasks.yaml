@@ -25,7 +25,7 @@ write_story_content_task:
 
     Note: One page consists of a core vocabulary word, one simple English sentence, and its translation. (one-to-one)
   expected_output: >
-    A list of story text and core vocabulary word broken down by pages, with age-appropriate language, engaging narrative,
+    A list of story text (each must contain its core vocabulary word) and core vocabulary word broken down by pages, with age-appropriate language, engaging narrative,
     and consistent pacing throughout the book.
 
 # TODO 未来增加review
@@ -85,7 +85,7 @@ translate_content_task:
 
     Each page consists of a core vocabulary word,one illustration, one simple English sentence, and its translation.
   expected_output: >
-    A list of complete translated text & core vocabulary word for each page in "{target_language}", preserving the original story's
+    A list of complete translated text (each must still contain its core vocabulary word) & core vocabulary word for each page in "{target_language}", preserving the original story's
     engagement level and educational value while being culturally appropriate.
 
 generate_html_pages_task:
@@ -99,10 +99,15 @@ generate_html_pages_task:
     
     2. Content Integration:
        - Illustration
-       - English text content with core vocabulary word highlighted
-       - Translated text content with core vocabulary word highlighted
+       - English text content with core vocabulary word highlighted (case-insensitive)
+       - Translated text content with core vocabulary word highlighted (case-insensitive)
 
-    Ensure maintaining readability and visual appeal appropriate for age range "{age_range}".
+    Ensure professional publication-quality aesthetics with:
+    - Balanced typography and visual hierarchy
+    - Consistent spacing and alignment
+    - Polished visual presentation
+    - Age-appropriate design elements and decorations for "{age_range}"
+    - Professional typesetting and layout
   expected_output: >
-    An html template (with javascript if needed) that can fulfill with the following key: {illustration_path}  {english_text}   {translated_text}   {english_highlight_vocabulary_word}  {translated_highlight_vocabulary_word}
-    Directly output the html. No explanation.
+    An jinja2 html template (with javascript if needed) with the following keys {{ illustration_path }}  {{ english_text }}   {{ translated_text }}   {{ english_highlight_vocabulary_word }}  {{ translated_highlight_vocabulary_word }}
+    Directly output a complete, standalone HTML file (in string) that can be opened in any browser. The template should include all necessary HTML structure, CSS styling, and JavaScript functionality.

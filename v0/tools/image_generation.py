@@ -12,22 +12,6 @@ def on_queue_update(update):
            print(log["message"])
 
 
-class ImageGenerationSchema(BaseModel):
-    """Input for ImageGenerationTool."""
-    prompt: str = Field(
-        ...,
-        description="Text description of the image to generate"
-    )
-    width: int = Field(
-        default=1280,
-        description="Width of the generated image in pixels"
-    )
-    height: int = Field(
-        default=720,
-        description="Height of the generated image in pixels"
-    )
-
-
 load_dotenv()
 
 
@@ -37,49 +21,69 @@ client = InferenceClient(
 )
 
 
-class ImageGenerationTool(BaseTool):
-    name: str = "Image Generation Tool"
+
+class ImageGenerationSchema(BaseModel):
+    """Input for BatchImageGenerationTool."""
+    prompts: list[str] = Field(
+        ...,
+        description="List of text descriptions of images to generate"
+    )
+    width: int = Field(
+        default=1280,
+        description="Width of the generated images in pixels"
+    )
+    height: int = Field(
+        default=720,
+        description="Height of the generated images in pixels"
+    )
+
+class BatchImageGenerationTool(BaseTool):
+    name: str = "Batch Image Generation Tool"
     description: str = "Generates images from text descriptions using the FLUX.1 model"
     args_schema: Type[BaseModel] = ImageGenerationSchema
+    model_name: str = "fal-ai/flux/dev" # "fal-ai/flux/schnell"
 
-    def _run(self, prompt: str, width: int = 1280, height: int = 720) -> str:
+    def _run(self, prompts: list[str], width: int = 1280, height: int = 720) -> list[str]:
         """
-        Generate an image based on the text prompt.
+        Generate multiple images based on text prompts.
         
         Args:
-            prompt (str): Text description of the image to generate
-            width (int): Width of the generated image in pixels
-            height (int): Height of the generated image in pixels
+            prompts (list[str]): List of text descriptions to generate images from
+            width (int): Width of the generated images in pixels
+            height (int): Height of the generated images in pixels
             
         Returns:
-            str: Path to the generated image file
+            list[str]: List of URLs to the generated image files
         """
-        result = fal_client.subscribe(
-            "fal-ai/flux/schnell",
-            arguments={
-                "prompt": prompt,
-                "image_size": {
-                    "width": width,
-                    "height": height
-                }
-            },
-            with_logs=True,
-            on_queue_update=on_queue_update,
-        )
-        return result['images'][0]['url']
+        results = []
+        for prompt in prompts:
+            result = fal_client.subscribe(
+                self.model_name,
+                arguments={
+                    "prompt": prompt,
+                    "image_size": {
+                        "width": width,
+                        "height": height
+                    }
+                },
+                with_logs=True,
+                on_queue_update=on_queue_update,
+            )
+            results.append(result['images'][0]['url'])
+        return results
 
 
 
 
 if __name__ == "__main__":
     # Test image generation
-    tool = ImageGenerationTool()
+    tool = BatchImageGenerationTool()
     
     test_prompt = "A cute cartoon astronaut floating in space with stars and planets in the background, children's book style"
     
     print(f"Generating test image with prompt: {test_prompt}")
     result = tool._run(
-        prompt=test_prompt,
+        prompts=[test_prompt],
         width=1280,
         height=720
     )

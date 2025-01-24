@@ -7,8 +7,9 @@ from crewai.project import CrewBase, agent, crew, task
 from dotenv import load_dotenv
 import litellm
 from pydantic import BaseModel, Field
+from jinja2 import Template
 
-from v0.tools.image_generation import ImageGenerationTool
+from v0.tools.image_generation import BatchImageGenerationTool
 
 
 llm = LLM(model="bedrock/us.anthropic.claude-3-5-sonnet-20241022-v2:0", temperature=0.8)
@@ -36,7 +37,7 @@ class StoryOutline(BaseModel):
 
 class PageContent(BaseModel):
     core_vocabulary_word: str = Field(..., description="The core vocabulary word for the page")
-    content: str = Field(..., description="The content for the page")
+    content: str = Field(..., description="The content for the page. Must contains core vocabulary word.")
 
 
 class PageContents(BaseModel):
@@ -116,7 +117,7 @@ class StoryBookCrew():
             verbose=True,
             memory=False,
             llm=llm,
-            tools=[ImageGenerationTool()]
+            tools=[BatchImageGenerationTool()]
         )
 
     @agent
@@ -193,7 +194,7 @@ class StoryBookCrew():
             agent=self.illustrator(),
             context=[self.create_illustrations_task()],
             output_json=Illustrations,
-            tools=[ImageGenerationTool()]
+            tools=[BatchImageGenerationTool()]
         )
 
     @task
@@ -229,55 +230,102 @@ class StoryBookCrew():
         )
 
 
-if __name__ == "__main__":
-    # load environment variables
-    load_dotenv()
-
-    crew = StoryBookCrew().crew()
+def generate_html_pages(result: dict, output_dir: str) -> None:
+    """
+    Generate HTML pages from the crew result.
     
-    result = crew.kickoff({
-        'story_theme': 'The modern cosmology about the universe, its birth, evolution and different types of Celestial bodies',
-        'age_range': '1-6',
-        'target_language': 'Chinese'
-    })
-
-    # output the result to a file
-    with open('result.json', 'w') as f:
-        json.dump(result.model_dump(), open('result.json', 'w', encoding='utf-8'), indent=4, ensure_ascii=False)
-
-    import pdb
-    pdb.set_trace()
-    
-    # Create output directory if it doesn't exist
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = f'output_htmls_{timestamp}'
-    os.makedirs(output_dir, exist_ok=True)
-    
+    Args:
+        result: The result dictionary from crew.kickoff()
+        output_dir: Directory to save the generated HTML files
+    """
     # Get the template and data from results
-    html_template: str = result.raw
-    illustrations: list[str] = result.tasks_output[-3].illustration_paths
-    english_pages: list[PageContent] = result.tasks_output[-6].pages
-    translated_pages: list[PageContent] = result.tasks_output[-2].pages
+    html_template: str = result['raw']
+
+    # Remove markdown code block if present
+    if html_template.startswith('```html'):
+        html_template = html_template[7:]
+    if html_template.endswith('```'):
+        html_template = html_template[:-3]
+
+    html_template = html_template.strip()
+
+    illustrations: list[str] = result['tasks_output'][-3]['json_dict']['illustration_paths']
+    english_pages: list[PageContent] = result['tasks_output'][-6]['json_dict']['pages']
+    translated_pages: list[PageContent] = result['tasks_output'][-2]['json_dict']['pages']
 
     # Save the template
     template_file = os.path.join(output_dir, 'template.html')
-    with open(template_file, 'w', encoding='utf-8') as f:
+    with open(template_file, 'w+', encoding='utf-8') as f:
         f.write(html_template)
 
     # For each page, create an HTML file with the content
     for i in range(len(illustrations)):
         page_data = {
             'illustration_path': illustrations[i],
-            'english_text': english_pages[i].content,
-            'translated_text': translated_pages[i].content,
-            'english_highlight_vocabulary_word': english_pages[i].core_vocabulary_word,
-            'translated_highlight_vocabulary_word': translated_pages[i].core_vocabulary_word
+            'english_text': english_pages[i]['content'],
+            'translated_text': translated_pages[i]['content'],
+            'english_highlight_vocabulary_word': english_pages[i]['core_vocabulary_word'],
+            'translated_highlight_vocabulary_word': translated_pages[i]['core_vocabulary_word']
         }
         
         # Render the template with the page data
-        page_html = html_template.format(**page_data)
+        # Only format the keys that exist in page_data
+        page_html = html_template
+        
+        # Create template object and render with page data
+        template = Template(page_html)
+        page_html = template.render(**page_data)
         
         # Save to a file
         output_file = os.path.join(output_dir, f'page_{i+1}.html')
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, 'w+', encoding='utf-8') as f:
             f.write(page_html)
+
+
+def generate_story_book(story_theme: str, age_range: str, target_language: str, output_dir: str | None = None) -> dict:
+    """
+    Generate a complete story book with illustrations and translations.
+    
+    Args:
+        story_theme: Theme/topic of the story
+        age_range: Target age range (e.g. '1-6')
+        target_language: Language to translate the story into
+        output_dir: Optional directory to save HTML output files. If None, uses timestamped directory.
+        
+    Returns:
+        dict: The complete result dictionary containing all story content
+    """
+    load_dotenv()
+
+    crew = StoryBookCrew().crew()
+    
+    result = crew.kickoff({
+        'story_theme': story_theme,
+        'age_range': age_range, 
+        'target_language': target_language
+    })
+
+    # Generate HTML pages if output_dir specified
+    if output_dir is None:
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_dir = f'output_htmls_{timestamp}'
+
+    # Convert to dict and save result
+    result_dict = result.model_dump()
+    os.makedirs(output_dir, exist_ok=True)
+    result_json_path = os.path.join(output_dir, 'result.json')
+    with open(result_json_path, 'w+', encoding='utf-8') as f:
+        json.dump(result_dict, f, indent=4, ensure_ascii=False)
+    
+    generate_html_pages(result_dict, output_dir)
+    
+    return result_dict
+
+
+if __name__ == "__main__":
+    # The modern cosmology about the universe, its birth, evolution and different types of Celestial bodies
+    generate_story_book(
+        story_theme='calculus math',
+        age_range='1-6',
+        target_language='Chinese'
+    )
