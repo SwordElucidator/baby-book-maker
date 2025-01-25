@@ -12,7 +12,7 @@ from v0.tools.image_generation import BatchImageGenerationTool
 
 
 claude = LLM(model="bedrock/us.anthropic.claude-3-5-sonnet-20241022-v2:0", temperature=0.8)
-deepseek_r1 = LLM(model="deepseek/deepseek-chat-2:0", temperature=0.8)
+deepseek_r1 = LLM(model="deepseek/deepseek-reasoner", temperature=0.8)  # TODO 框架不支持
 
 
 class ResearchResult(BaseModel):
@@ -80,7 +80,7 @@ class StoryBookCrew():
             config=self.agents_config['researcher'],
             verbose=True,
             memory=False,
-            llm=deepseek_r1,
+            llm=claude,
         )
     
     @agent
@@ -89,7 +89,7 @@ class StoryBookCrew():
             config=self.agents_config['story_outline_planner'],
             verbose=True,
             memory=False,
-            llm=deepseek_r1,
+            llm=claude,
         )
     
     @agent
@@ -107,7 +107,7 @@ class StoryBookCrew():
             config=self.agents_config['art_director'],
             verbose=True,
             memory=False,
-            llm=deepseek_r1,
+            llm=claude,
         )
 
     @agent
@@ -135,7 +135,7 @@ class StoryBookCrew():
             config=self.agents_config['page_designer'],
             verbose=True,
             memory=False,
-            llm=deepseek_r1,
+            llm=claude,
         )
 
     @task
