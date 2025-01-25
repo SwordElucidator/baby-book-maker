@@ -5,14 +5,14 @@ from typing import List
 from crewai import LLM, Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from dotenv import load_dotenv
-import litellm
 from pydantic import BaseModel, Field
 from jinja2 import Template
 
 from v0.tools.image_generation import BatchImageGenerationTool
 
 
-llm = LLM(model="bedrock/us.anthropic.claude-3-5-sonnet-20241022-v2:0", temperature=0.8)
+claude = LLM(model="bedrock/us.anthropic.claude-3-5-sonnet-20241022-v2:0", temperature=0.8)
+deepseek_r1 = LLM(model="deepseek/deepseek-chat-2:0", temperature=0.8)
 
 
 class ResearchResult(BaseModel):
@@ -80,7 +80,7 @@ class StoryBookCrew():
             config=self.agents_config['researcher'],
             verbose=True,
             memory=False,
-            llm=llm,
+            llm=deepseek_r1,
         )
     
     @agent
@@ -89,7 +89,7 @@ class StoryBookCrew():
             config=self.agents_config['story_outline_planner'],
             verbose=True,
             memory=False,
-            llm=llm,
+            llm=deepseek_r1,
         )
     
     @agent
@@ -98,7 +98,7 @@ class StoryBookCrew():
             config=self.agents_config['childrens_book_writer'],
             verbose=True,
             memory=False,
-            llm=llm,
+            llm=claude,
         )
 
     @agent
@@ -107,7 +107,7 @@ class StoryBookCrew():
             config=self.agents_config['art_director'],
             verbose=True,
             memory=False,
-            llm=llm,
+            llm=deepseek_r1,
         )
 
     @agent
@@ -116,7 +116,7 @@ class StoryBookCrew():
             config=self.agents_config['illustrator'],
             verbose=True,
             memory=False,
-            llm=llm,
+            llm=claude,
             tools=[BatchImageGenerationTool()]
         )
 
@@ -126,7 +126,7 @@ class StoryBookCrew():
             config=self.agents_config['translator'],
             verbose=True,
             memory=False,
-            llm=llm,
+            llm=claude,
         )
     
     @agent
@@ -135,7 +135,7 @@ class StoryBookCrew():
             config=self.agents_config['page_designer'],
             verbose=True,
             memory=False,
-            llm=llm,
+            llm=deepseek_r1,
         )
 
     @task

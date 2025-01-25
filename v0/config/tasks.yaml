@@ -90,24 +90,17 @@ translate_content_task:
 
 generate_html_pages_task:
   description: >
-    Generate a single-page HTML template that combine text content, translations, and illustrations into a cohesive layout
-    suitable for A4 paper printing. For each page:
-
-    1. Layout Requirements:
-       - A4 page size
-       - Proper margins and spacing
-    
-    2. Content Integration:
-       - Illustration
-       - English text content with core vocabulary word highlighted (case-insensitive)
-       - Translated text content with core vocabulary word highlighted (case-insensitive)
+    Generate a single-page industrial-level children's picture book HTML template that combine text content, translations, and illustrations into a cohesive layout
+    suitable for A4 paper printing. Make sure the template has:
+      - Illustration
+      - English text content with core vocabulary word highlighted (case-insensitive)
+      - Translated text content with core vocabulary word highlighted (case-insensitive)
 
     Ensure professional publication-quality aesthetics with:
     - Balanced typography and visual hierarchy
     - Consistent spacing and alignment
-    - Polished visual presentation
+    - industrial-level visual presentation
     - Age-appropriate design elements and decorations for "{age_range}"
-    - Professional typesetting and layout
   expected_output: >
-    An jinja2 html template (with javascript if needed) with the following keys {{ illustration_path }}  {{ english_text }}   {{ translated_text }}   {{ english_highlight_vocabulary_word }}  {{ translated_highlight_vocabulary_word }}
-    Directly output a complete, standalone HTML file (in string) that can be opened in any browser. The template should include all necessary HTML structure, CSS styling, and JavaScript functionality.
+    A children's picture book jinja2 html template (with javascript if needed) with the following keys {{ illustration_path }}  {{ english_text }}   {{ translated_text }}   {{ english_highlight_vocabulary_word }}  {{ translated_highlight_vocabulary_word }}
+    Directly output a complete, standalone HTML file (in string) that can be opened in any browser. No extra text or comments. The template should include all necessary HTML structure, CSS styling, and JavaScript functionality.
