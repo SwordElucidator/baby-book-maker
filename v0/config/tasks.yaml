@@ -69,7 +69,7 @@ create_illustrations_task:
 generate_illustrations_task:
   description: >
     Generate actual illustrations using AI image generation tools based on the prompts created.
-    Ensure all images are generated at a consistent resolution of 1280x720 pixels or lower to maintain
+    Ensure all images are generated at a consistent resolution of 720x1280 pixels or lower to maintain
     quality while optimizing file size. Save each generated image and track the file paths.
 
     Note: One illustration for one page (one-to-one)
@@ -92,7 +92,7 @@ generate_html_pages_task:
   description: >
     Generate a single-page industrial-level children's picture book HTML template that combine text content, translations, and illustrations into a cohesive layout
     suitable for A4 paper printing. Make sure the template has:
-      - Illustration
+      - Illustration (720x1280, make sure the image covers the entire page!)
       - English text content with core vocabulary word highlighted (case-insensitive)
       - Translated text content with core vocabulary word highlighted (case-insensitive)
 
@@ -102,5 +102,5 @@ generate_html_pages_task:
     - industrial-level visual presentation
     - Age-appropriate design elements and decorations for "{age_range}"
   expected_output: >
-    A children's picture book jinja2 html template (with javascript if needed) with the following keys {{ illustration_path }}  {{ english_text }}   {{ translated_text }}   {{ english_highlight_vocabulary_word }}  {{ translated_highlight_vocabulary_word }}
+    An industrial-level children's picture book jinja2 html template (with javascript if needed) with the following keys {{ illustration_path }}  {{ english_text }}   {{ translated_text }}   {{ english_highlight_vocabulary_word }}  {{ translated_highlight_vocabulary_word }}
     Directly output a complete, standalone HTML file (in string) that can be opened in any browser. No extra text or comments. The template should include all necessary HTML structure, CSS styling, and JavaScript functionality.
