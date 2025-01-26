@@ -13,7 +13,7 @@ develop_story_outline_task:
     development, plot points, and page-by-page story progression. Ensure the story length and complexity
     align with the target age group's attention span and comprehension level.
 
-    Note: One page consists of a core vocabulary word, one simple English sentence, and its translation. (one-to-one)
+    Note: One page consists of a core vocabulary word, one English sentence (suitable for a picture book), and its translation. (one-to-one)
   expected_output: >
     Title of the book, character descriptions, plot points, core vocabulary words, and educational elements.
 
@@ -23,9 +23,9 @@ write_story_content_task:
     vocabulary and sentence structure are suitable for "{age_range}", while maintaining narrative flow
     and entertainment value. Each page's content should be balanced in length and complexity.
 
-    Note: One page consists of a core vocabulary word, one simple English sentence, and its translation. (one-to-one)
+    Note: One page consists of a core vocabulary word, one English sentence (suitable for a picture book), and its translation. (one-to-one)
   expected_output: >
-    A list of story text (each must contain its core vocabulary word) and core vocabulary word broken down by pages, with age-appropriate language, engaging narrative,
+    A list of story text for a complete picture book (each must contain its core vocabulary word) and core vocabulary word broken down by pages, with age-appropriate language, engaging narrative,
     and consistent pacing throughout the book.
 
 # TODO 未来增加review
@@ -83,7 +83,7 @@ translate_content_task:
     story's charm, cultural nuances, and age-appropriate tone. Ensure the translation fits well
     with the illustrations and maintains proper pacing for each page.
 
-    Each page consists of a core vocabulary word,one illustration, one simple English sentence, and its translation.
+    Each page consists of a core vocabulary word,one illustration, one English sentence (suitable for a picture book), and its translation.
   expected_output: >
     A list of complete translated text (each must still contain its core vocabulary word) & core vocabulary word for each page in "{target_language}", preserving the original story's
     engagement level and educational value while being culturally appropriate.
@@ -97,10 +97,9 @@ generate_html_pages_task:
       - Translated text content with core vocabulary word highlighted (case-insensitive)
 
     Ensure professional publication-quality aesthetics with:
-    - Balanced typography and visual hierarchy
-    - Consistent spacing and alignment
-    - industrial-level visual presentation
+    - Proper spacing and alignment
+    - Proper visual hierarchy; the text should be readable and the image should be the main focus
     - Age-appropriate design elements and decorations for "{age_range}"
   expected_output: >
-    An industrial-level children's picture book jinja2 html template (with javascript if needed) with the following keys {{ illustration_path }}  {{ english_text }}   {{ translated_text }}   {{ english_highlight_vocabulary_word }}  {{ translated_highlight_vocabulary_word }}
-    Directly output a complete, standalone HTML file (in string) that can be opened in any browser. No extra text or comments. The template should include all necessary HTML structure, CSS styling, and JavaScript functionality.
+    An industrial-level children's picture book jinja2 html template (with beautiful UI CSS and necessary JS) with the following keys {{ illustration_path }}  {{ english_text }}   {{ translated_text }}   {{ english_highlight_vocabulary_word }}  {{ translated_highlight_vocabulary_word }}
+    Directly output a complete, standalone HTML file (in string) that can be opened in any browser. No extra text or comments. The template should include all necessary HTML structure, fancy CSS styling, and JavaScript functionality.

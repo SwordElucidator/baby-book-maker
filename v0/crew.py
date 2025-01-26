@@ -257,7 +257,8 @@ def generate_html_pages(result: dict, output_dir: str) -> None:
     template_file = os.path.join(output_dir, 'template.html')
     with open(template_file, 'w+', encoding='utf-8') as f:
         f.write(html_template)
-
+    
+    page_htmls = []
     # For each page, create an HTML file with the content
     for i in range(len(illustrations)):
         page_data = {
@@ -280,6 +281,52 @@ def generate_html_pages(result: dict, output_dir: str) -> None:
         output_file = os.path.join(output_dir, f'page_{i+1}.html')
         with open(output_file, 'w+', encoding='utf-8') as f:
             f.write(page_html)
+        page_htmls.append(page_html)
+
+    # Create a merged HTML file combining all pages horizontally
+    merged_html = f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {{
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            overflow-x: auto;
+            min-height: 100vh;
+        }}
+        .page-container {{
+            display: flex;
+            gap: 20px;
+        }}
+        .page {{
+            flex: 0 0 auto;
+            width: 21cm; /* A4 width */
+            height: 29.7cm; /* A4 height */
+            margin-right: 20px;
+        }}
+        iframe {{
+            width: 100%;
+            height: 120%;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }}
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        {"".join([f'<div class="page"><iframe src="page_{i+1}.html" frameborder="0"></iframe></div>' for i in range(len(page_htmls))])}
+    </div>
+</body>
+</html>
+"""
+
+    # Save the merged file
+    merged_file = os.path.join(output_dir, 'merged_book.html')
+    with open(merged_file, 'w+', encoding='utf-8') as f:
+        f.write(merged_html)
 
 
 def generate_story_book(story_theme: str, age_range: str, target_language: str, output_dir: str | None = None) -> dict:
