@@ -7,6 +7,7 @@ from crewai.project import CrewBase, agent, crew, task
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 from jinja2 import Template
+from elevenlabs.client import ElevenLabs
 
 from v0.tools.image_generation import BatchImageGenerationTool
 
@@ -228,7 +229,21 @@ class StoryBookCrew():
             verbose=True,
             output_handler=lambda x: [task.output for task in x.tasks if task.output]
         )
+    
 
+def generate_audio(text: str, output_dir: str, file_name: str) -> str:
+    client = ElevenLabs()
+    audio = client.text_to_speech.convert(
+        text=text,
+        voice_id="XfNU2rGpBa01ckF309OY",
+        model_id="eleven_multilingual_v2",
+        output_format="mp3_44100_320",
+    )
+    # save to file
+    output_file = os.path.join(output_dir, file_name)
+    with open(output_file, 'wb') as f:
+        f.write(audio)
+    return output_file
 
 def generate_html_pages(result: dict, output_dir: str) -> None:
     """
@@ -252,6 +267,12 @@ def generate_html_pages(result: dict, output_dir: str) -> None:
     illustrations: list[str] = result['tasks_output'][-3]['json_dict']['illustration_paths']
     english_pages: list[PageContent] = result['tasks_output'][-6]['json_dict']['pages']
     translated_pages: list[PageContent] = result['tasks_output'][-2]['json_dict']['pages']
+
+
+    english_pages_text = '\n'.join([page.content for page in english_pages])
+    # for eleven labs
+    audio_file_name = 'audio.mp3'
+    generate_audio(english_pages_text, output_dir, audio_file_name)
 
     # Save the template
     template_file = os.path.join(output_dir, 'template.html')
@@ -313,9 +334,19 @@ def generate_html_pages(result: dict, output_dir: str) -> None:
             border: 1px solid #ccc;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }}
+        #audio-player {{
+            position: fixed;
+            top: 20px; /* Hide below viewport */
+            right: 20px;
+            z-index: 1000;
+        }}
     </style>
 </head>
 <body>
+    <audio id="audio-player" controls autoplay>
+        <source src="{audio_file_name}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <div class="page-container">
         {"".join([f'<div class="page"><iframe src="page_{i+1}.html" frameborder="0"></iframe></div>' for i in range(len(page_htmls))])}
     </div>
@@ -373,7 +404,7 @@ if __name__ == "__main__":
     # The modern cosmology about the universe, its birth, evolution and different types of Celestial bodies
     # A Brief History of Time: from the Big Bang to Black Holes
     generate_story_book(
-        story_theme='A Brief History of Time: from the Big Bang to Black Holes',
+        story_theme='小小消防员James在火灾中灭火并拯救了大家',
         age_range='1-6',
         target_language='Chinese'
     )

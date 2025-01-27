@@ -1024,6 +1024,28 @@ files = [
 ]
 
 [[package]]
+name = "elevenlabs"
+version = "1.50.5"
+description = ""
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "elevenlabs-1.50.5-py3-none-any.whl", hash = "sha256:71cb961abe50f48684e349579741630b8534698ca70e955e84cb3c2467175146"},
+    {file = "elevenlabs-1.50.5.tar.gz", hash = "sha256:602b1c67bda9c53cc02c009c02225290043b9d312e02f8af860d42e3ab15c0dc"},
+]
+
+[package.dependencies]
+httpx = ">=0.21.2"
+pydantic = ">=1.9.2"
+pydantic-core = ">=2.18.2,<3.0.0"
+requests = ">=2.20"
+typing_extensions = ">=4.0.0"
+websockets = ">=11.0"
+
+[package.extras]
+pyaudio = ["pyaudio (>=0.2.14)"]
+
+[[package]]
 name = "embedchain"
 version = "0.1.126"
 description = "Simplest open source retrieval (RAG) framework"
@@ -6607,4 +6629,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "<3.13,>=3.10"
-content-hash = "1d482090727e9468f9539739d87d707fc2643d69cba9e389d6785a9d3bef6e3a"
+content-hash = "55dee79e5af313ee696c567e9b9884d1ec1c1964ce7f8c0c561f0f60fd5988c4"
