@@ -371,6 +371,7 @@ def generate_story_book(story_theme: str, age_range: str, target_language: str, 
 
 if __name__ == "__main__":
     # The modern cosmology about the universe, its birth, evolution and different types of Celestial bodies
+    # A Brief History of Time: from the Big Bang to Black Holes
     generate_story_book(
         story_theme='A Brief History of Time: from the Big Bang to Black Holes',
         age_range='1-6',
