@@ -21,7 +21,7 @@ write_story_content_task:
     Transform the story outline into engaging, age-appropriate story text for each page.
     Ensure vocabulary and sentence structure are suitable for "{age_range}", while maintaining narrative flow
     and entertainment value. Use dialogue to make the story more engaging. Each page's content should be balanced in length and complexity.
-    Involve metaphors and similes to make the story more engaging.
+    Sometimes, involve metaphors and similes to make the story more engaging.
 
     Note: One page consists of a core vocabulary word, one English sentence (suitable for a picture book), and its translation. (one-to-one)
   expected_output: >
