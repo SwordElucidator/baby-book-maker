@@ -233,7 +233,7 @@ class StoryBookCrew():
 
 def generate_audio(text: str, output_dir: str, file_name: str) -> str:
     client = ElevenLabs()
-    audio = client.text_to_speech.convert(
+    response = client.text_to_speech.convert(
         text=text,
         voice_id="XfNU2rGpBa01ckF309OY",
         model_id="eleven_multilingual_v2",
@@ -242,7 +242,9 @@ def generate_audio(text: str, output_dir: str, file_name: str) -> str:
     # save to file
     output_file = os.path.join(output_dir, file_name)
     with open(output_file, 'wb') as f:
-        f.write(audio)
+        for chunk in response:
+            if chunk:
+                f.write(chunk)
     return output_file
 
 def generate_html_pages(result: dict, output_dir: str) -> None:
@@ -269,7 +271,7 @@ def generate_html_pages(result: dict, output_dir: str) -> None:
     translated_pages: list[PageContent] = result['tasks_output'][-2]['json_dict']['pages']
 
 
-    english_pages_text = '\n'.join([page.content for page in english_pages])
+    english_pages_text = '\n'.join([page['content'] for page in english_pages])
     # for eleven labs
     audio_file_name = 'audio.mp3'
     generate_audio(english_pages_text, output_dir, audio_file_name)
