@@ -48,7 +48,7 @@ write_story_content_task:
 
 design_art_direction_task:
   description: >
-    Develop comprehensive visual style guidelines for the book's illustrations based on the
+    Based on the user input "{story_theme}", the story outline and content, develop comprehensive visual style guidelines for the book's illustrations based on the
     content and target age group "{age_range}". Create detailed visual style guidelines for character design, color palette, and overall artistic direction.
   expected_output: >
     Character design specifications, color palette, visual style guidelines.
@@ -56,17 +56,16 @@ design_art_direction_task:
 create_illustrations_task:
   description: >
     You will use AI image generation tools to create illustrations for each page of a picture book following the art direction
-    guidelines and content. Generate illustration prompts with multiple variations for each scene to ensure the best
-    possible visual representation. Ensure illustrations are engaging and appropriate
-    for "{age_range}".
+    guidelines and content. Ensure illustrations are engaging and appropriate for "{age_range}".
 
-    Each prompt should contain detailed consistent character design, detailed scene description, and storyboard instructions of the elements in the scene.
+    Each prompt must contain detailed character description, detailed scene description, and storyboard instructions.
     Ensure each illustration has a prominent subject that a parent can point to and explain to their child.
+    
+    Since each page will be independently generated, each prompt must be self-contained and not rely on the previous page.
 
     Note: One illustration for one page (one-to-one)
   expected_output: >
-    High-quality AI illustration prompts (e.g. for Midjourney) for each page that align with the character design, art direction, content,
-    and age-appropriate visual complexity.
+    High-quality AI illustration prompts (e.g. for Midjourney) for each page that contains the complete character design, scene description, and storyboard instructions.
 
 generate_illustrations_task:
   description: >
@@ -82,12 +81,11 @@ generate_illustrations_task:
 translate_content_task:
   description: >
     Translate the text into the target language "{target_language}", maintaining the
-    story's charm, cultural nuances, and age-appropriate tone. Ensure the translation fits well
-    with the illustrations and maintains proper pacing for each page.
+    story's charm, cultural nuances, and age-appropriate tone.
 
-    Each page consists of a core vocabulary word,one illustration, one English sentence (suitable for a picture book), and its translation.
+    Note: Each page consists of a core vocabulary word,one illustration, one English sentence (suitable for a picture book), and its translation.
   expected_output: >
-    A list of complete translated text (each must still contain its core vocabulary word) & core vocabulary word for each page in "{target_language}", preserving the original story's
+    A list of complete translated text (each must still contain its core vocabulary word) & core vocabulary word for each page in {target_language}, preserving the original story's
     engagement level and educational value while being culturally appropriate.
 
 generate_html_pages_task:

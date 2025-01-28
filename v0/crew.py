@@ -9,11 +9,18 @@ from pydantic import BaseModel, Field
 from jinja2 import Template
 from elevenlabs.client import ElevenLabs
 
+
 from v0.tools.image_generation import BatchImageGenerationTool
 
 
+load_dotenv()
+
+
 claude = LLM(model="bedrock/us.anthropic.claude-3-5-sonnet-20241022-v2:0", temperature=0.8)
+claude_low_tmp = LLM(model="bedrock/us.anthropic.claude-3-5-sonnet-20241022-v2:0", temperature=0.1)
 deepseek_r1 = LLM(model="deepseek/deepseek-reasoner", temperature=0.8)  # TODO 框架不支持
+ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
+eleven_labs_client = ElevenLabs(api_key=ELEVENLABS_API_KEY)
 
 
 class ResearchResult(BaseModel):
@@ -127,7 +134,7 @@ class StoryBookCrew():
             config=self.agents_config['translator'],
             verbose=True,
             memory=False,
-            llm=claude,
+            llm=claude_low_tmp,
         )
     
     @agent
@@ -170,7 +177,7 @@ class StoryBookCrew():
         return Task(
             config=self.tasks_config['design_art_direction_task'],
             agent=self.art_director(),
-            context=[self.write_story_content_task()],
+            context=[self.develop_story_outline_task(), self.write_story_content_task()],
             output_json=ArtDirection
         )
 
@@ -232,12 +239,11 @@ class StoryBookCrew():
     
 
 def generate_audio(text: str, output_dir: str, file_name: str) -> str:
-    client = ElevenLabs()
-    response = client.text_to_speech.convert(
+    response = eleven_labs_client.text_to_speech.convert(
         text=text,
         voice_id="XfNU2rGpBa01ckF309OY",
         model_id="eleven_multilingual_v2",
-        output_format="mp3_44100_320",
+        output_format="mp3_44100_192",
     )
     # save to file
     output_file = os.path.join(output_dir, file_name)
@@ -406,7 +412,8 @@ if __name__ == "__main__":
     # The modern cosmology about the universe, its birth, evolution and different types of Celestial bodies
     # A Brief History of Time: from the Big Bang to Black Holes
     generate_story_book(
-        story_theme='小小消防员James在火灾中灭火并拯救了大家',
+        story_theme='Little firefighter James put out the fire and saved everyone',
         age_range='1-6',
         target_language='Chinese'
     )
+    # generate_audio("test it!", '', 'test.mp3')
