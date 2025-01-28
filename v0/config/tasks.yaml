@@ -61,7 +61,7 @@ create_illustrations_task:
     Each prompt must contain detailed character description, detailed scene description, and storyboard instructions.
     Ensure each illustration has a prominent subject that a parent can point to and explain to their child.
     
-    Since each page will be independently generated, each prompt must be self-contained and not rely on the previous page.
+    Since each page will be independently generated, each prompt must contain the complete character design (portrait, pose, wear, etc.), scene description, and storyboard instructions.
 
     Note: One illustration for one page (one-to-one)
   expected_output: >
@@ -81,7 +81,7 @@ generate_illustrations_task:
 translate_content_task:
   description: >
     Translate the text into the target language "{target_language}", maintaining the
-    story's charm, cultural nuances, and age-appropriate tone.
+    story's charm, cultural nuances, and age-appropriate tone. Be careful to use double quotes (\") for json.
 
     Note: Each page consists of a core vocabulary word,one illustration, one English sentence (suitable for a picture book), and its translation.
   expected_output: >
