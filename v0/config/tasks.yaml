@@ -22,6 +22,7 @@ write_story_content_task:
     Ensure vocabulary and sentence structure are suitable for "{age_range}", while maintaining narrative flow
     and entertainment value. Use dialogue to make the story more engaging. Each page's content should be balanced in length and complexity.
     Sometimes, involve metaphors and similes to make the story more engaging.
+    Avoid using double quotes in string for json.
 
     Note: One page consists of a core vocabulary word, one English sentence (suitable for a picture book), and its translation. (one-to-one)
   expected_output: >
@@ -57,19 +58,17 @@ create_illustrations_task:
   description: >
     You will use AI image generation tools to create illustrations for each page of a picture book following the art direction
     guidelines and content. Ensure illustrations are engaging and appropriate for "{age_range}".
-
-    Each prompt must contain detailed character description, detailed scene description, and storyboard instructions.
     Ensure each illustration has a prominent subject that a parent can point to and explain to their child.
-    
-    Since each page will be independently generated, each prompt must contain the complete character design (portrait, pose, wear, etc.), scene description, and storyboard instructions.
+    Since each page will be independently generated, each prompt must contain scene description and storyboard instructions, and copy the character designs from the art direction.
 
     Note: One illustration for one page (one-to-one)
   expected_output: >
-    High-quality AI illustration prompts (e.g. for Midjourney) for each page that contains the complete character design, scene description, and storyboard instructions.
+    High-quality AI illustration prompts (e.g. for Midjourney) for each page.
 
 generate_illustrations_task:
   description: >
-    Generate actual illustrations using AI image generation tools based on the prompts created.
+    Generate actual illustrations using AI image generation tools based on the prompts created. 
+    When calling the tool, pass the complete prompt as a string that contains all the information.
     Ensure all images are generated at a consistent resolution of 720x1280 pixels or lower to maintain
     quality while optimizing file size. Save each generated image and track the file paths.
 
@@ -81,7 +80,7 @@ generate_illustrations_task:
 translate_content_task:
   description: >
     Translate the text into the target language "{target_language}", maintaining the
-    story's charm, cultural nuances, and age-appropriate tone. Be careful to use double quotes (\") for json.
+    story's charm, cultural nuances, and age-appropriate tone. Avoid using double quotes in string for json.
 
     Note: Each page consists of a core vocabulary word,one illustration, one English sentence (suitable for a picture book), and its translation.
   expected_output: >

@@ -53,14 +53,36 @@ class PageContents(BaseModel):
     pages: List[PageContent] = Field(..., description="The content for each page")
     
 
+class CharacterDesign(BaseModel):
+    """Character design model"""
+    name: str = Field(..., description="The name of the character")
+    design: str = Field(..., description="The visual design of the character")
+
+
 class ArtDirection(BaseModel):
     """Art direction model"""
-    art_direction: str = Field(..., description="The final art direction")
+    character_designs: List[CharacterDesign] = Field(..., description="The character designs for the picture book")
+    color_palette: str = Field(..., description="The color palette for the picture book")
+    visual_style: str = Field(..., description="The visual style for the picture book")
+
+
+class FixedCharacterDesign(BaseModel):
+    """Character design model"""
+    name: str = Field(..., description="The name of the character")
+    design: str = Field(..., description="The visual design of the character; should be copied from art direction completely")
+    additional_info: str = Field(..., description="The additional information unique to this page")
+
+
+class IllustrationPrompt(BaseModel):
+    """Illustration prompt model"""
+    scene_description: str = Field(..., description="The description of the scene")
+    character_designs: List[FixedCharacterDesign] = Field(..., description="The character designs needed for the page.")
+    storyboard_instructions: str = Field(..., description="The storyboard instructions")
 
 
 class IllustrationPrompts(BaseModel):
     """Illustrations model"""
-    illustration_prompts: List[str] = Field(..., description="The AI image generation prompts for each page")
+    illustration_prompts: List[IllustrationPrompt] = Field(..., description="The AI image generation prompts for each page")
 
 
 class Illustrations(BaseModel):
