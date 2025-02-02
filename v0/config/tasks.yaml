@@ -59,16 +59,16 @@ create_illustrations_task:
     You will use AI image generation tools to create illustrations for each page of a picture book following the art direction
     guidelines and content. Ensure illustrations are engaging and appropriate for "{age_range}".
     Ensure each illustration has a prominent subject that a parent can point to and explain to their child.
-    Since each page will be independently generated, each prompt must contain scene description and storyboard instructions, and copy the character designs from the art direction.
+    Since each page will be independently generated, each prompt must contain scene description, character gesture, expression, storyboard instructions, color, visual style, etc.
 
     Note: One illustration for one page (one-to-one)
   expected_output: >
-    High-quality AI illustration prompts (e.g. for Midjourney) for each page.
+    High-quality AI illustration prompts and character names (e.g. for Midjourney) for each page.
 
 generate_illustrations_task:
   description: >
     Generate actual illustrations using AI image generation tools based on the prompts created. 
-    When calling the tool, pass the complete prompt as a string that contains all the information.
+    When calling the tool, pass the prompt and character designs.
     Ensure all images are generated at a consistent resolution of 720x1280 pixels or lower to maintain
     quality while optimizing file size. Save each generated image and track the file paths.
 
