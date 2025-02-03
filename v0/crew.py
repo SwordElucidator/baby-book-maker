@@ -147,7 +147,10 @@ class StoryBookCrew():
         return Task(
             config=self.tasks_config['generate_illustrations_task'],
             agent=self.illustrator(),
-            context=[self.create_illustrations_task()],
+            context=[
+                self.design_art_direction_task(),
+                self.create_illustrations_task()
+                ],
             output_json=Illustrations,
             tools=[BatchImageGenerationTool()]
         )

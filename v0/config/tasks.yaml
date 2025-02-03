@@ -67,15 +67,12 @@ create_illustrations_task:
 
 generate_illustrations_task:
   description: >
-    Generate actual illustrations using AI image generation tools based on the prompts created. 
-    When calling the tool, pass the prompt and character designs.
-    Ensure all images are generated at a consistent resolution of 720x1280 pixels or lower to maintain
-    quality while optimizing file size. Save each generated image and track the file paths.
+    Generate actual illustrations (one per page) using the AI batch image generation tool. 
+    When calling the tool, pass all prompts (prompt string and the involved character names), all character designs, consistent color palette, visual style.
 
-    Note: One illustration for one page (one-to-one)
   expected_output: >
-    List of file paths to the generated illustrations, with each path corresponding to a specific
-    page in sequential order. Also output the image size.
+    List of urls to the generated illustrations, with each path corresponding to a specific page in sequential order. Should have the same length as the pages in the story.
+    Also output the image size.
 
 translate_content_task:
   description: >
