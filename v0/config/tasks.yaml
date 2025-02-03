@@ -1,10 +1,9 @@
 research_story_theme_task:
   description: >
-    Based on the user input "{story_theme}" and target age group "{age_range}", research the latest topics
-    and themes. Use Wikipedia and other sources to gather background information and educational elements. 
-    Establish a final theme for a picture book, then determine the key educational elements.
+    Based on the user input "{story_theme}" and target age group "{age_range}", research proper topics and themes.
+    Establish a final theme for a children's picture book, then determine the key educational elements.
   expected_output: >
-    Final theme for a picture book, key educational elements.
+    Final theme for a children's picture book and key educational elements.
 develop_story_outline_task:
   description: >
     Create a detailed story outline based on the research findings and user requirements "{story_theme}".
@@ -49,17 +48,17 @@ write_story_content_task:
 
 design_art_direction_task:
   description: >
-    Based on the user input "{story_theme}", the story outline and content, develop comprehensive visual style guidelines for the book's illustrations based on the
-    content and target age group "{age_range}". Create detailed visual style guidelines for character design, color palette, and overall artistic direction.
+    Based on the user input "{story_theme}", the story outline and content, develop comprehensive art style guidelines for the book's illustrations based on the
+    content and target age group "{age_range}". Create detailed art style guidelines for character design, color palette, and overall artistic direction.
   expected_output: >
-    Character design specifications, color palette, visual style guidelines.
+    Character design specifications, color palette, art style guidelines.
 
 create_illustrations_task:
   description: >
     You will use AI image generation tools to create illustrations for each page of a picture book following the art direction
     guidelines and content. Ensure illustrations are engaging and appropriate for "{age_range}".
     Ensure each illustration has a prominent subject that a parent can point to and explain to their child.
-    Since each page will be independently generated, each prompt must contain scene description, character gesture, expression, storyboard instructions, color, visual style, etc.
+    Since each page will be independently generated, each prompt must contain scene description, character gesture, expression, storyboard instructions, color, art style, etc.
 
     Note: One illustration for one page (one-to-one)
   expected_output: >
@@ -68,7 +67,7 @@ create_illustrations_task:
 generate_illustrations_task:
   description: >
     Generate actual illustrations (one per page) using the AI batch image generation tool. 
-    When calling the tool, pass all prompts (prompt string and the involved character names), all character designs, consistent color palette, visual style.
+    When calling the tool, pass all prompts (prompt string and the involved character names), all character designs, consistent color palette, art style.
 
   expected_output: >
     List of urls to the generated illustrations, with each path corresponding to a specific page in sequential order. Should have the same length as the pages in the story.

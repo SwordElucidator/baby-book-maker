@@ -37,9 +37,9 @@ class ImageGenerationSchema(BaseModel):
         ...,
         description="The color palette for the whole picture book in 8 words"
     )
-    visual_style: str = Field(
+    art_style: str = Field(
         ...,
-        description="The visual style for the whole picture book in 4 words"
+        description="The art style for the whole picture book in 6 words"
     )
     # width: int = Field(
     #     default=1280,
@@ -56,7 +56,7 @@ class BatchImageGenerationTool(BaseTool):
     args_schema: Type[BaseModel] = ImageGenerationSchema
     model_name: str = "fal-ai/flux/dev" # "fal-ai/flux/schnell"
 
-    def _run(self, illustration_prompts: list[dict[str, str | list[str]]], character_designs: list[dict[str, str]], color_palette: str, visual_style: str) -> list[str]:
+    def _run(self, illustration_prompts: list[dict[str, str | list[str]]], character_designs: list[dict[str, str]], color_palette: str, art_style: str) -> list[str]:
         """
         Generate multiple images based on text prompts.
         
@@ -64,7 +64,7 @@ class BatchImageGenerationTool(BaseTool):
             illustration_prompts (List[{"prompt": str, "character_names": list[str]}]): List of prompts to generate images from
             character_designs (list[{"name": str, "design": str}]): List of character designs
             color_palette (str): The color palette for the picture book in 8 words
-            visual_style (str): The visual style for the picture book in 4 words
+            art_style (str): The art style for the picture book in 6 words
             width (int): Width of the generated images in pixels
             height (int): Height of the generated images in pixels
             
@@ -77,7 +77,7 @@ class BatchImageGenerationTool(BaseTool):
                 f'{character_design["name"]}: {character_design["design"]}' for character_design in character_designs 
                 if character_design["name"] in ill_prompt['character_names']
                 ]
-            prompt = f'{ill_prompt["prompt"]}\ncolor palette: {color_palette}, style: {visual_style}\n' + "\n".join(needed_character_designs)
+            prompt = f'{ill_prompt["prompt"]}\ncolor palette: {color_palette}, art style: {art_style}\n' + "\n".join(needed_character_designs)
             
             result = fal_client.subscribe(
                 self.model_name,
@@ -198,14 +198,14 @@ if __name__ == "__main__":
         }
     ],
         "color_palette": "bright red navy blue warm yellow clean white soft gray warm beige forest green sky blue",
-        "visual_style": "child-friendly rounded soft elevated-angle",
+        "art_style": "child-friendly rounded soft elevated-angle",
     }
     
     result = tool._run(
         illustration_prompts=data["illustration_prompts"],
         character_designs=data["character_designs"],
         color_palette=data["color_palette"],
-        visual_style=data["visual_style"]
+        art_style=data["art_style"]
     )
     
     print(result)

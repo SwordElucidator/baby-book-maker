@@ -43,7 +43,7 @@ class ArtDirection(BaseModel):
     """Art direction model"""
     character_designs: List[CharacterDesign] = Field(..., description="The character designs for the picture book")
     color_palette: str = Field(..., description="The color palette for the picture book in 8 words")
-    visual_style: str = Field(..., description="The visual style for the picture book in 4 words")
+    art_style: str = Field(..., description="The art style for the picture book in 6 words")
 
 
 class IllustrationPrompt(BaseModel):
